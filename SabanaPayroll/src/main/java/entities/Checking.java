@@ -17,6 +17,7 @@ public class Checking extends BankAccount {
      * <br><br>
      * @return el porcentaje depositado en la cuenta.
      */
+<<<<<<< HEAD
     public boolean processCheck(Check check) throws Exception {
 
         boolean result = false;
@@ -25,6 +26,10 @@ public class Checking extends BankAccount {
 
             super.setBalance(check.getAmount() -getDepositDiscount());
             result = true;
+=======
+
+    public boolean processCheck(Check check){
+>>>>>>> 3aea581fa039d8792d286beb769ce8b342bf1c98
 
         }
 
