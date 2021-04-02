@@ -64,7 +64,7 @@ Diagramas de secuencia:
 
 Captura de pantalla de los tests aprobados:
 
-* Triangle test
+* Triangle Test
 ![image](https://user-images.githubusercontent.com/79488147/113454843-d15cd480-93ce-11eb-81ae-51d01fce78dc.png)
 
 
@@ -86,6 +86,10 @@ Diseños
 
 * Diagrama de clases SabanaPayroll
 ![image](https://github.com/adrianaveme/MENDOZA-RAMIREZ-VELASQUEZ-SABANA-POOB-2021-1-LAB-ABSTRACT-CLASS/blob/master/Screenshots/Diagrama%20de%20clases%20SabanaPayroll%20(1).png)
+
+## PARTE 2
+* Sabana Payroll Tests:
+![image](https://user-images.githubusercontent.com/79488147/113456013-b5a6fd80-93d1-11eb-97f3-fbad96cca502.png)
 
 
 

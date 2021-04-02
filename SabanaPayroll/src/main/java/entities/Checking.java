@@ -2,9 +2,12 @@ package entities;
 
 public class Checking extends BankAccount {
 
+    public final double DEPOSIT_DISCOUNT = 5000;
+
     @Override
     public double getDepositDiscount() {
-        return 0;
+
+        return this.DEPOSIT_DISCOUNT;
     }
 
     /**
@@ -14,6 +17,8 @@ public class Checking extends BankAccount {
      */
 
     public boolean processCheck(Check check){
+
+
         return false;
     }
 
