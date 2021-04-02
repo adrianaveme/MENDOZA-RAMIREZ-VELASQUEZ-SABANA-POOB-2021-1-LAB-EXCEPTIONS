@@ -9,6 +9,7 @@ public abstract class BankAccount {
     /**
      * Inicializa una cuenta.
      */
+
     public BankAccount() {
         this.balance = 0;
     }

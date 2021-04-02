@@ -12,6 +12,7 @@ public class Checking extends BankAccount {
      * <br><br>
      * @return el porcentaje depositado en la cuenta.
      */
+
     public boolean processCheck(Check check){
         return false;
     }
