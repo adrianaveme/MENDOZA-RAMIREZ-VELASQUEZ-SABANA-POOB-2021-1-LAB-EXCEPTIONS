@@ -4,7 +4,7 @@ import entities.Department;
 
 import java.util.UUID;
 
-public class Employee {
+public abstract class Employee {
 
     private UUID id;
     private String name, lastName;
@@ -17,9 +17,7 @@ public class Employee {
         this.department = department;
     }
 
-    public double calculateSalary() {
-        return 0;
-    }
+    public abstract double calculateSalary();
 
     public UUID getId(){
         return id;
