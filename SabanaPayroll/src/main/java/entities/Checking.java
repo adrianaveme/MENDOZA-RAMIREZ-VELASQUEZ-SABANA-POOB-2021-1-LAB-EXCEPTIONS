@@ -1,5 +1,7 @@
 package entities;
 
+import java.time.LocalDate;
+
 public class Checking extends BankAccount {
 
     public final double DEPOSIT_DISCOUNT = 5000;
@@ -15,10 +17,18 @@ public class Checking extends BankAccount {
      * <br><br>
      * @return el porcentaje depositado en la cuenta.
      */
-    public boolean processCheck(Check check){
+    public boolean processCheck(Check check) throws Exception {
 
+        boolean result = false;
 
-        return false;
+        if ((check.getExpirationDate()).isAfter(LocalDate.now())){
+
+            super.setBalance(check.getAmount() -getDepositDiscount());
+            result = true;
+
+        }
+
+        return result;
     }
 
 }

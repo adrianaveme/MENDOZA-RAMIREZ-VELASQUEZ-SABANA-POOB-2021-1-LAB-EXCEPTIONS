@@ -33,7 +33,7 @@ public class CheckingTest {
     }
 
     @Test
-    public void shouldProcessCheck() {
+    public void shouldProcessCheck() throws Exception {
         Checking account = new Checking();
         Check check = new Check(10000, LocalDate.now().plusMonths(1));
 
@@ -42,7 +42,7 @@ public class CheckingTest {
     }
 
     @Test
-    public void shouldNotProcessCheck() {
+    public void shouldNotProcessCheck() throws Exception {
         Checking account = new Checking();
 
         assertFalse(account.processCheck(new Check(5000, LocalDate.now().plusMonths(1))));
@@ -52,7 +52,7 @@ public class CheckingTest {
     }
 
     @Test
-    public void shouldKeepBalance() {
+    public void shouldKeepBalance() throws Exception {
         Checking account = new Checking();
 
         assertTrue(account.deposit(11000)); //6000

@@ -69,7 +69,7 @@ public abstract class BankAccount {
         return balance;
     }
 
-    private void setBalance(double balance) throws Exception {
+    protected void setBalance(double balance) throws Exception {
         if (balance < 0)
             throw new Exception("Error en el deposito");
 
