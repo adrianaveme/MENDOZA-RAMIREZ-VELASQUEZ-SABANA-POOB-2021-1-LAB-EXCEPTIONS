@@ -81,6 +81,9 @@ Captura de pantalla de los tests aprobados:
 
 Diseños
 
+* Diagrama de clases shape
+![image](https://github.com/adrianaveme/MENDOZA-RAMIREZ-VELASQUEZ-SABANA-POOB-2021-1-LAB-ABSTRACT-CLASS/blob/master/Screenshots/Diagrama%20de%20clases%20Shape%20.png)
+
 
 
 
