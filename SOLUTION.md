@@ -6,6 +6,8 @@
 
 **Adriana Velásquez**
 
+# LAB INHERITANCE
+
 
 ## Parte 1
 
@@ -55,3 +57,19 @@ Diagramas de secuencia:
 * Tests Passed
 
 ![image](https://user-images.githubusercontent.com/79488147/112578850-c9e06e80-8dc3-11eb-8b2b-e85994e2755c.png)
+
+# LAB ABSTRACT CLASS
+
+## PARTE 1
+* Triangle test
+
+
+* Rectangle Test
+
+
+* Circle Test
+
+
+* Square Test
+
+
