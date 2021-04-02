@@ -61,13 +61,14 @@ Diagramas de secuencia:
 # LAB ABSTRACT CLASS
 
 ## PARTE 1
+
+Captura de pantalla de los tests aprobados:
+
 * Triangle test
 ![image](https://user-images.githubusercontent.com/79488147/113454843-d15cd480-93ce-11eb-81ae-51d01fce78dc.png)
 
 
 * Rectangle Test
-
-
 ![image](https://user-images.githubusercontent.com/79488147/113455059-4f20e000-93cf-11eb-89ce-c0442710247c.png)
 
 
@@ -76,8 +77,10 @@ Diagramas de secuencia:
 
 
 * Square Test
-
 ![image](https://user-images.githubusercontent.com/79488147/113454965-18e36080-93cf-11eb-8f46-95fffa84c777.png)
+
+Diseños
+
 
 
 
