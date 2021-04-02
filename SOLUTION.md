@@ -62,6 +62,7 @@ Diagramas de secuencia:
 
 ## PARTE 1
 * Triangle test
+![image](https://user-images.githubusercontent.com/79488147/113454843-d15cd480-93ce-11eb-81ae-51d01fce78dc.png)
 
 
 * Rectangle Test
