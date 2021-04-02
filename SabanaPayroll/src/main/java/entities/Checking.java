@@ -22,9 +22,10 @@ public class Checking extends BankAccount {
 
         boolean result = false;
 
-        if ((check.getExpirationDate()).isAfter(LocalDate.now())){
 
-            super.setBalance(check.getAmount() -getDepositDiscount());
+        if (((check.getExpirationDate()).isAfter(LocalDate.now()))&&check.getAmount()>DEPOSIT_DISCOUNT){
+
+            super.setBalance(super.getBalance()+(check.getAmount() -getDepositDiscount()));
             result = true;
         }
 
