@@ -68,9 +68,16 @@ Diagramas de secuencia:
 * Rectangle Test
 
 
+![image](https://user-images.githubusercontent.com/79488147/113455059-4f20e000-93cf-11eb-89ce-c0442710247c.png)
+
+
 * Circle Test
+![image](https://user-images.githubusercontent.com/79488147/113454995-2ac50380-93cf-11eb-8597-19c2ecd9fda6.png)
 
 
 * Square Test
+
+![image](https://user-images.githubusercontent.com/79488147/113454965-18e36080-93cf-11eb-8f46-95fffa84c777.png)
+
 
 
