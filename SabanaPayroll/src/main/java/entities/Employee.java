@@ -37,4 +37,8 @@ public abstract class Employee {
     public String getLastName() {
         return lastName;
     }
+
+    public BankAccount getAccount(){
+        return account;
+    }
 }
