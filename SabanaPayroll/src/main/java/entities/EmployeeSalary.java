@@ -7,8 +7,8 @@ public class EmployeeSalary extends Employee {
 
     private double salary;
 
-    public EmployeeSalary(String name, String lastName, Department department, double salary) {
-        super(name, lastName, department);
+    public EmployeeSalary(String name, String lastName, Department department, BankAccount account, double salary) {
+        super(name, lastName, department, account);
         this.salary = salary;
     }
 

@@ -52,4 +52,16 @@ public class SabanaPayroll {
             }
         }
     }
+
+    public boolean depositToEmployee(double amount, UUID id) {
+        return false;
+    }
+
+    public double calculateEmployeeBalance(UUID id){
+        return 0;
+    }
+
+    public double calculateAllEmployeesBalance(){
+        return 0;
+    }
 }

@@ -9,12 +9,14 @@ public abstract class Employee {
     private UUID id;
     private String name, lastName;
     private Department department;
+    private BankAccount account;
 
-    public Employee(String name, String lastName, Department department){
+    public Employee(String name, String lastName, Department department, BankAccount account){
         this.id = UUID.randomUUID();
         this.name = name;
         this.lastName = lastName;
         this.department = department;
+        this.account = account;
     }
 
     public abstract double calculateSalary();
