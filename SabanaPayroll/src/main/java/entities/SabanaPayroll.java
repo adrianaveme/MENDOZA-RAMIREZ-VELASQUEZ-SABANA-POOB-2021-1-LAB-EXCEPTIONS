@@ -1,15 +1,14 @@
 package entities;
 
-import entities.*;
-
 import java.util.List;
 import java.util.UUID;
+import java.util.ArrayList;
 
 public class SabanaPayroll {
 
-    public List<Department> departments;
+    public ArrayList<Department> departments;
 
-    public SabanaPayroll(List<Department> departments) {
+    public SabanaPayroll(ArrayList<Department> departments) {
         this.departments = departments;
     }
 

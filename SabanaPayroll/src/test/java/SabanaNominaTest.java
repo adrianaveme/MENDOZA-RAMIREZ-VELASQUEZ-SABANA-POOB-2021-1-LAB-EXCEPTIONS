@@ -2,7 +2,6 @@ import entities.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -24,9 +23,9 @@ public class SabanaNominaTest {
     @BeforeAll
     public static void setUp(){
 
-        List<Department> departments = new ArrayList<>();
-        List<Employee> employeesArt = new ArrayList<>();
-        List<Employee> employeesEngineering = new ArrayList<>();
+        ArrayList<Department> departments = new ArrayList<>();
+        ArrayList<Employee> employeesArt = new ArrayList<>();
+        ArrayList<Employee> employeesEngineering = new ArrayList<>();
 
         d1 = new Department("arts", employeesArt);
         d2 = new Department("engineering", employeesEngineering);

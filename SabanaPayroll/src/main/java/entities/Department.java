@@ -1,15 +1,15 @@
 package entities;
 
 import java.util.UUID;
-import java.util.List;
+import java.util.ArrayList;
 
 public class Department {
 
-    private List<Employee>employees;
+    private ArrayList<Employee>employees;
     private UUID id;
     private String name;
 
-    public Department(String name, List<Employee> employees){
+    public Department(String name, ArrayList<Employee> employees){
         this.id = UUID.randomUUID();
         this.name = name;
         this.employees = employees;
@@ -23,7 +23,7 @@ public class Department {
         return id;
     }
 
-    public List getEmployees(){
+    public ArrayList getEmployees(){
         return employees;
     }
 
