@@ -125,7 +125,11 @@ _____
 ![image](https://github.com/adrianaveme/MENDOZA-RAMIREZ-VELASQUEZ-SABANA-POOB-2021-1-LAB-ABSTRACT-CLASS/blob/master/Screenshots/depositToEmployee%20diagrama%20de%20secuencia.png)
 
 
+## Parte 5
 
+### Diseño
+
+![image](https://github.com/adrianaveme/MENDOZA-RAMIREZ-VELASQUEZ-SABANA-POOB-2021-1-LAB-ABSTRACT-CLASS/blob/master/Screenshots/Dise%C3%B1o%20en%20diagrama%20de%20clases%20SabanaPayroll.png)
 
 
 
