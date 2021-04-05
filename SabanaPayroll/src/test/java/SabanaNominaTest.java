@@ -91,23 +91,23 @@ public class SabanaNominaTest {
 
     @Test
     public void shouldCalculateEmployeeBalance(){
-        assertTrue(sp.depositToEmployee(10000, ec1.getId()));
-        assertTrue(sp.depositToEmployee(4000, es1.getId()));
-        assertFalse(sp.depositToEmployee(2000, es1.getId()));
-        assertTrue(sp.depositToEmployee(12000, eh1.getId()));
+        assertTrue(sp.depositToEmployee(11000, ec1.getId())); //6000
+        assertTrue(sp.depositToEmployee(4000, es1.getId())); //2000
+        assertFalse(sp.depositToEmployee(2000, es1.getId())); //0
+        assertTrue(sp.depositToEmployee(12000, eh1.getId())); //10000
 
-        assertEquals(5000, sp.calculateEmployeeBalance(ec1.getId()));
+        assertEquals(6000, sp.calculateEmployeeBalance(ec1.getId()));
         assertEquals(2000, sp.calculateEmployeeBalance(es1.getId()));
         assertEquals(10000, sp.calculateEmployeeBalance(eh1.getId()));
     }
 
     @Test
     public void shouldCalculateAllEmployeesBalance(){
-        assertTrue(sp.depositToEmployee(10000, ec1.getId()));
-        assertTrue(sp.depositToEmployee(4000, es1.getId()));
-        assertFalse(sp.depositToEmployee(2000, es1.getId()));
-        assertTrue(sp.depositToEmployee(12000, eh1.getId()));
+        assertTrue(sp.depositToEmployee(9000, ec1.getId())); //4000
+        assertTrue(sp.depositToEmployee(4000, es1.getId())); //2000
+        assertFalse(sp.depositToEmployee(2000, es1.getId())); //0
+        assertTrue(sp.depositToEmployee(12000, eh1.getId())); //10000
 
-        assertEquals(17000, sp.calculateAllEmployeesBalance());
+        assertEquals(16000, sp.calculateAllEmployeesBalance());
     }
 }
