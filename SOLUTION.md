@@ -106,6 +106,10 @@ _____
 
 ## Parte 4
 
+### Pruebas SabanaPayroll
+![image](https://user-images.githubusercontent.com/79488147/113536254-47ae3200-959b-11eb-9f80-70e1425d1ee1.png)
+
+
 ### Diseños
 
 * Diagrama de clases Sabana Payroll
