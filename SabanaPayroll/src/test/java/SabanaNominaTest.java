@@ -1,6 +1,6 @@
 import entities.*;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+
+import org.junit.jupiter.api.*;
 
 import java.util.ArrayList;
 
@@ -20,8 +20,8 @@ public class SabanaNominaTest {
     private static Savings as1;
     private static Savings as2;
 
-    @BeforeAll
-    public static void setUp(){
+    @BeforeEach
+    public void setUp() {
 
         ArrayList<Department> departments = new ArrayList<>();
         ArrayList<Employee> employeesArt = new ArrayList<>();
@@ -47,6 +47,19 @@ public class SabanaNominaTest {
 
         sp = new SabanaPayroll(departments);
     }
+    @AfterEach
+    public void tearDown() {
+        sp = null;
+        ec1 = null;
+        eh1 = null;
+        es1 = null;
+        ac1 =null;
+        as1 = null;
+        as2 = null;
+        d1 =null;
+        d2 =null;
+    }
+
 
     @Test
     public void shouldCalculateEmployeeSalary(){
@@ -100,7 +113,6 @@ public class SabanaNominaTest {
         assertEquals(2000, sp.calculateEmployeeBalance(es1.getId()));
         assertEquals(10000, sp.calculateEmployeeBalance(eh1.getId()));
     }
-
     @Test
     public void shouldCalculateAllEmployeesBalance(){
         assertTrue(sp.depositToEmployee(10000, ec1.getId()));
@@ -110,4 +122,7 @@ public class SabanaNominaTest {
 
         assertEquals(17000, sp.calculateAllEmployeesBalance());
     }
+
+
+
 }
