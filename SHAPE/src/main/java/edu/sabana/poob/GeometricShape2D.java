@@ -21,7 +21,7 @@ public interface GeometricShape2D {
 
     default String toStringGeometricShape2D() {
         return String.format("This is a %s with area %s and perimeter %s"
-                , this.getClass().getName()
+                , this.getClass().getSimpleName()
                 , this.getArea()
                 , this.getPerimeter());
     }

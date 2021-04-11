@@ -67,9 +67,9 @@ public class TriangleTest {
     @Test
     @DisplayName("GIVEN a triangle WHEN printed SHOULD return a message with its atributes")
     public void shouldPrintTriangle(){
-        assertEquals("This is a Triangle with color NONE and sides that measure 1.0, 1.0 and 1.0", t1.toString());
-        assertEquals("This is a Triangle with color yellow and sides that measure 1.0, 1.0 and 1.0", t2.toString());
-        assertEquals("This is a Triangle with color NONE and sides that measure 4.0, 6.0 and 4.0", t3.toString());
-        assertEquals("This is a Triangle with color blue and sides that measure 9.0, 7.0 and 8.0", t4.toString());
+        assertTrue(t1.toStringGeometricShape2D().contains("This is a Triangle"));
+        assertTrue(t2.toStringGeometricShape2D().contains("This is a Triangle"));
+        assertTrue(t3.toStringGeometricShape2D().contains("This is a Triangle"));
+        assertTrue(t4.toStringGeometricShape2D().contains("This is a Triangle"));
     }
 }

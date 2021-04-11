@@ -54,11 +54,13 @@ public class Rectangle extends Shape implements GeometricShape2D{
         return (2*width+2*length);
     }
 
-    @Override
+    /*@Override
     public String toString() {
         return super.toString() + String.format(", length %s ", length) +String.format( "and width %s", width);
 
     }
+
+     */
 
 
 

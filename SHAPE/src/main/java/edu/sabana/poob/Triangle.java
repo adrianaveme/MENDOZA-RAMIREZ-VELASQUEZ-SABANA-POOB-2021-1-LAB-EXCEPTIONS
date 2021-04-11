@@ -83,8 +83,10 @@ public class Triangle extends Shape implements GeometricShape2D {
      *
      * @return String print of the triangle
      */
-    @Override
+    /*@Override
     public String toString() {
         return super.toString() + String.format(" and sides that measure %s, %s and %s", side1, side2, side3);
     }
+
+     */
 }

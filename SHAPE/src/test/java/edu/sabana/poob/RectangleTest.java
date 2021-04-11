@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class RectangleTest {
 
@@ -53,10 +54,10 @@ public class RectangleTest {
     @Test
     public void shouldPrintRectangle() {
 
-        assertEquals("This is a Rectangle with color NONE, length 1.0 and width 1.0", r1.toString());
-        assertEquals("This is a Rectangle with color blue, length 1.0 and width 1.0", r2.toString());
-        assertEquals("This is a Rectangle with color NONE, length 3.0 and width 2.0", r3.toString());
-        assertEquals("This is a Rectangle with color red, length 6.0 and width 5.0", r4.toString());
+        assertTrue(r1.toStringGeometricShape2D().contains("This is a Rectangle"));
+        assertTrue(r2.toStringGeometricShape2D().contains("This is a Rectangle"));
+        assertTrue(r3.toStringGeometricShape2D().contains("This is a Rectangle"));
+        assertTrue(r4.toStringGeometricShape2D().contains("This is a Rectangle"));
 
 
     }
