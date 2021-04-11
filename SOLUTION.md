@@ -177,7 +177,9 @@ Cambios en CylinderTest, shouldCalculateSuperficialArea();
 
 2. Cambiamos el área superficial de la prueba de 3462 a 9687 para que el valor concuerde con la constante de PI que hemos estado utilizando (3.142).
 
+Cambios en CylinderTest, shouldCalculateDiameter();
 
+1. Cambios en la primera prueba. Decía que debía dar 20 pero el valor real es 2.
 
 
 
