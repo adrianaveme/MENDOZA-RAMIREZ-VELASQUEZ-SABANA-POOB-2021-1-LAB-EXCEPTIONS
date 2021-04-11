@@ -135,9 +135,12 @@ _____
 
 ![image](https://github.com/adrianaveme/MENDOZA-RAMIREZ-VELASQUEZ-SABANA-POOB-2021-1-LAB-ABSTRACT-CLASS/blob/master/Screenshots/Dise%C3%B1o%20en%20diagrama%20de%20clases%20SabanaPayroll.png)
 
+---
+---
+
 # LAB INTERFACES
 
-## Parte 1
+## Parte 1 - `Entendiendo las Interfaces`
 
 ### ¿Cuál es la relación entre `Circle` y `Shape`?
 
@@ -161,9 +164,9 @@ _____
 * Cylinder implementa a GeometricShape3D
 * Cylinder es un GeometricShape3D
 
-### *NOTA*
+### *`NOTA`*
 
-Cambios en CylinderTest, shouldCalculateVolume();
+*Cambios en CylinderTest, shouldCalculateVolume();*
 
 1. El volumen fue calculado para un cilindro de altura 20.5 y radio 14.5 aparte. El resultado fue disntindo de aquel dado por la prueba.
 La prueba decia que debia dar 4310, pero realmente da 13542.
@@ -171,49 +174,55 @@ La prueba decia que debia dar 4310, pero realmente da 13542.
 2. El volumen fue calculado para un cilindro de altura 42.1 y radio 23.5 aparte. El resultado fue disntindo de aquel dado por la prueba.
 La prueba decia que debia dar 15522, pero realmente da 73050.
 
-Cambios en CylinderTest, shouldCalculateSuperficialArea();
+*Cambios en CylinderTest, shouldCalculateSuperficialArea();*
 
 1. Cambiamos el área superficial de la prueba de 3188 a 3189 para que el valor concuerde con la constante de PI que hemos estado utilizando (3.142).
 
 2. Cambiamos el área superficial de la prueba de 3462 a 9687 para que el valor concuerde con la constante de PI que hemos estado utilizando (3.142).
 
-Cambios en CylinderTest, shouldCalculateDiameter();
+*Cambios en CylinderTest, shouldCalculateDiameter();*
 
 1. Cambios en la primera prueba. Decía que debía dar 20 pero el valor real es 2.
 
-Cambios en CylinderTest, shouldCalculatePerimeter();
+*Cambios en CylinderTest, shouldCalculatePerimeter();*
 
 1. Cambios para el primer cilindro. La prueba decía que debía dar 62 pero en realidad el perimetro es 6.
 
-Cambios en CylinderTest, shouldCalculatePerimeter();
+*Cambios en CylinderTest, shouldCalculatePerimeter();*
 
 2. Cambios para el primer cilindro. La prueba decía que debía dar 314 pero en realidad el área es 3.
 
 
-### CylinderTest Screenshot
+* CylinderTest Screenshot
+
 ![image](https://user-images.githubusercontent.com/79488147/114290521-e6c4a500-9a45-11eb-8d95-22157971a81c.png)
 
-## Parte 2
+## Parte 2 - `Implementando Interfaces`
 
-**Implementando GeometricShape2D**
+### **Implementando `GeometricShape2D`**
 
-### TriangleTest Screenshot
+* TriangleTest Screenshot
+
 ![image](https://user-images.githubusercontent.com/79488147/114290877-563b9400-9a48-11eb-9423-d9575169ef8c.png)
 
-### RectangleTest Screenshot
+* RectangleTest Screenshot
+
 ![image](https://user-images.githubusercontent.com/79488147/114290888-73706280-9a48-11eb-97a9-bc9c9e9bf215.png)
 
-**Implementando GeometricShape3D**
+### **Implementando `GeometricShape2D`**
 
-### RectangleSolidTest Screenshot
+* RectangleSolidTest Screenshot
+
 ![image](https://user-images.githubusercontent.com/79488147/114291989-22b13780-9a51-11eb-834f-93d99de68602.png)
 
 
 ### PyramidTest Screenshot
 
-### CubeTest Screenshot
+* CubeTest Screenshot
+
 ![image](https://user-images.githubusercontent.com/79488147/114291979-0dd4a400-9a51-11eb-811e-849203b7e5c3.png)
 
+## Parte 3 - `Diseñando Interfaces`
 
 
 
