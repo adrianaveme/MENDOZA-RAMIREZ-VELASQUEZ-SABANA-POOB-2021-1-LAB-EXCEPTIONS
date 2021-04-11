@@ -224,6 +224,22 @@ La prueba decia que debia dar 15522, pero realmente da 73050.
 
 ## Parte 3 - `Diseñando Interfaces`
 
+Diagrama de clases Shape Design
+![image](https://github.com/adrianaveme/MENDOZA-RAMIREZ-VELASQUEZ-SABANA-POOB-2021-1-LAB-INTERFACES/blob/master/Screenshots/Diagrama%20de%20clases%20Shape%20Design%20.png)
+
+## Parte 5 - `Integrando interfaces`
+
+Diagrama de clases Sabana Payroll
+
+![image](https://github.com/adrianaveme/MENDOZA-RAMIREZ-VELASQUEZ-SABANA-POOB-2021-1-LAB-INTERFACES/blob/master/Screenshots/Diagrama%20de%20clases%20SabanaPayroll%20Interfaces.png)
+
+Diagrama de secuencia AssignFamilyCompensation
+
+![image](https://github.com/adrianaveme/MENDOZA-RAMIREZ-VELASQUEZ-SABANA-POOB-2021-1-LAB-INTERFACES/blob/master/Screenshots/assignFamilyCompensation%20diagrama%20de%20secuencia.png)
+
+
+
+
 
 
 
