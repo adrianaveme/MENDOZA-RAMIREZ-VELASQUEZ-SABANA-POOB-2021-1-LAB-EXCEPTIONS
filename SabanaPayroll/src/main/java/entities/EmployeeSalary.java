@@ -12,6 +12,11 @@ public class EmployeeSalary extends Employee {
         this.salary = salary;
     }
 
+    public EmployeeSalary(String name, String lastName, Department department, double salary) {
+        super(name, lastName, department);
+        this.salary = salary;
+    }
+
     @Override
     public double calculateSalary() {
         return this.salary * (1.0 - (EmployeeSalary.HEALTH_DISCOUNT + EmployeeSalary.PENSION_DISCOUNT));

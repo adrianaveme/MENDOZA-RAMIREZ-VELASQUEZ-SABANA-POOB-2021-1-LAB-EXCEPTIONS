@@ -13,7 +13,8 @@ public class SabanaPayrollTest {
 
     private static Faker faker;
 
-    private static List<Employee> employees;
+    private static ArrayList<Employee> employees;
+    private static ArrayList<Department> departments;
     private static Department department;
 
     private static EmployeeSalary employeeSalary;
@@ -26,7 +27,7 @@ public class SabanaPayrollTest {
     public static void setUp() {
         faker = new Faker(new Locale("en-US"));
 
-        department = new Department("Engineering");
+        department = new Department("Engineering", employees);
 
         employeeSalary = new EmployeeSalary(faker.name().firstName(), faker.name().lastName(), department, 1000000);
         employeeHours = new EmployeeHours(faker.name().firstName(), faker.name().lastName(), department, 40);
@@ -37,7 +38,10 @@ public class SabanaPayrollTest {
         employees.add(employeeHours);
         employees.add(employeeCommission);
 
-        sabanaPayroll = new SabanaPayroll(employees);
+        departments = new ArrayList<>();
+        departments.add(department);
+
+        sabanaPayroll = new SabanaPayroll(departments);
     }
 
     @Test

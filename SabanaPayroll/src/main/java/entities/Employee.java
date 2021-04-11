@@ -19,6 +19,12 @@ public abstract class Employee {
         this.account = account;
     }
 
+    public Employee(String name, String lastName, Department department) {
+        this.name = name;
+        this.lastName = lastName;
+        this.department = department;
+    }
+
     public abstract double calculateSalary();
 
     public UUID getId(){

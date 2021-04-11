@@ -14,6 +14,11 @@ public class EmployeeCommission extends Employee {
         this.soldProducts = soldProducts;
     }
 
+    public EmployeeCommission(String name, String lastName, Department department, double soldProducts) {
+        super(name, lastName, department);
+        this.soldProducts = soldProducts;
+    }
+
     @Override
     public double calculateSalary() {
         return this.soldProducts*COMMISSION_VAL;

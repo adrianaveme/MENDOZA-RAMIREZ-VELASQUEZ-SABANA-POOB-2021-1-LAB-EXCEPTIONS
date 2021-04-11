@@ -13,6 +13,11 @@ public class EmployeeHours extends Employee {
         this.hours = hours;
     }
 
+    public EmployeeHours(String name, String lastName, Department department, double hours) {
+        super(name, lastName, department);
+        this.hours = hours;
+    }
+
     @Override
     public double calculateSalary() {
         return this.hours*HOURS_VAL;

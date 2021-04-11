@@ -15,6 +15,10 @@ public class Department {
         this.employees = employees;
     }
 
+    public Department(String name) {
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }

@@ -34,9 +34,9 @@ public class ColsubsidioFundTest {
         employeeCommission = new EmployeeCommission(faker.name().firstName(), faker.name().lastName(), department, 100);
 
         employees = new ArrayList<>();
-        employees.add(EmployeeSalary);
-        employees.add(EmployeeHours);
-        employees.add(EmployeeCommission);
+        employees.add(employeeSalary);
+        employees.add(employeeHours);
+        employees.add(employeeCommission);
 
         colsubsidioFund = new ColsubsidioFund();
     }
