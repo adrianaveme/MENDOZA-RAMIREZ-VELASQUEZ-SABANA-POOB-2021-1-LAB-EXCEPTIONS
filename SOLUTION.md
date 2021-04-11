@@ -216,7 +216,10 @@ La prueba decia que debia dar 15522, pero realmente da 73050.
 ![image](https://user-images.githubusercontent.com/79488147/114291989-22b13780-9a51-11eb-834f-93d99de68602.png)
 
 
-### PyramidTest Screenshot
+* PyramidTest Screenshot
+
+![image](https://user-images.githubusercontent.com/79488147/114324635-d4ec0c00-9af0-11eb-9c6e-a9c799985b6d.png)
+
 
 * CubeTest Screenshot
 

@@ -32,14 +32,14 @@ public class SabanaPayroll {
 
     public double calculateEmployeeSalary(UUID id) {
         double cont = 0;
-        for (Department d : departments) {
-           List<Employee> employees = d.getEmployees();
-           for (Employee e : employees){
-               if (e.getId() == id){
-                   cont = e.calculateSalary();
-               }
-           }
+
+
+        Employee employee = findEmployee(id);
+
+        if (employee!=null) {
+            cont = employee.calculateSalary();
         }
+
         return cont;
     }
 
@@ -55,13 +55,11 @@ public class SabanaPayroll {
     public boolean depositToEmployee(double amount, UUID id) {
         boolean result = false;
 
-        for (Department d : departments) {
-            List<Employee> employees = d.getEmployees();
-            for (Employee e : employees){
-                if (e.getId() == id){
-                   result = e.getAccount().deposit(amount);
-                }
-            }
+
+        Employee employee = findEmployee(id);
+
+        if (employee!=null) {
+            result = employee.getAccount().deposit(amount);
         }
 
         return result;
@@ -70,13 +68,10 @@ public class SabanaPayroll {
     public double calculateEmployeeBalance(UUID id){
         double result = 0;
 
-        for (Department d : departments) {
-            List<Employee> employees = d.getEmployees();
-            for (Employee e : employees){
-                if (e.getId() == id){
-                    result = e.getAccount().getBalance();
-                }
-            }
+        Employee employee = findEmployee(id);
+
+        if (employee!=null) {
+            result = employee.getAccount().getBalance();
         }
 
         return result;
@@ -93,5 +88,20 @@ public class SabanaPayroll {
         }
 
         return cont;
+    }
+
+    public Employee findEmployee(UUID id){
+        Employee res = null;
+
+        for (Department d : departments) {
+            List<Employee> employees = d.getEmployees();
+            for (Employee e : employees){
+                if (e.getId() == id){
+                    res = e;
+                }
+            }
+        }
+
+        return res;
     }
 }
