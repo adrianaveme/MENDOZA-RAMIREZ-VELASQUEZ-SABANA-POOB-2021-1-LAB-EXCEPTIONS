@@ -46,8 +46,8 @@ public class CylinderTest {
     public void shouldCalculateVolume() {
 
         assertEquals(3, (int) c1.getVolume());
-        assertEquals(4310, (int) c2.getVolume());
-        assertEquals(15522, (int) c3.getVolume());
+        assertEquals(13542, (int) c2.getVolume());
+        assertEquals(73050, (int) c3.getVolume());
     }
 
     @Test

@@ -163,10 +163,15 @@ _____
 
 ### *NOTA*
 
-Cambio en CylinderTest, shouldCalculateVolume();
-El volumen fue calculado para un cilindro de altura 20.5 y radio 14.5 aparte. El resultado fue disntindo de aquel dado por la prueba.
+Cambios en CylinderTest, shouldCalculateVolume();
 
+1. El volumen fue calculado para un cilindro de altura 20.5 y radio 14.5 aparte. El resultado fue disntindo de aquel dado por la prueba.
 La prueba decia que debia dar 4310, pero realmente da 13542.
+
+2. El volumen fue calculado para un cilindro de altura 42.1 y radio 23.5 aparte. El resultado fue disntindo de aquel dado por la prueba.
+La prueba decia que debia dar 15522, pero realmente da 73050.
+
+
 
 
 
