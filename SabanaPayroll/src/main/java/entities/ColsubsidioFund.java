@@ -24,7 +24,7 @@ public class ColsubsidioFund implements IFamilyCompensationFund {
 
     boolean result = false;
 
-    if (!(registeredEmployees.containsKey(employee.getId())||employee instanceof EmployeeCommission)){
+    if (!(isEmployeeRegistered(employee.getId()))||employee instanceof EmployeeCommission) {
         registeredEmployees.put(employee.getId(),employee);
         result = true;
 
@@ -35,12 +35,20 @@ public class ColsubsidioFund implements IFamilyCompensationFund {
 
     @Override
     public boolean deleteEmployee(UUID id) {
-        return false;
+
+        boolean result = false;
+
+        if (isEmployeeRegistered(id)){
+            registeredEmployees.remove(id);
+            result = true;
+        }
+
+        return result;
     }
 
     @Override
     public boolean isEmployeeRegistered(UUID id) {
-        return false;
+        return registeredEmployees.containsKey(id);
     }
 
     @Override

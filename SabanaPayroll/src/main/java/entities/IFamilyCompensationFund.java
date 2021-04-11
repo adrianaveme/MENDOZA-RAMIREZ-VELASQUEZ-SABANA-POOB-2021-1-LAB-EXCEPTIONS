@@ -18,7 +18,7 @@ public interface IFamilyCompensationFund {
     /**
      * Elimina a un empleado de la caja de compensación
      *
-     * @param employee
+     * @param id
      * @return false- si no pudo eliminar al empleado, de otro modo, true.
      */
     boolean deleteEmployee(UUID id);
@@ -26,7 +26,7 @@ public interface IFamilyCompensationFund {
     /**
      * Indica si el empleado esta o no registrado en la caja de compensación.
      *
-     * @param employee
+     * @param id
      * @return true - si el empleado existe, false de otro modo.
      */
     boolean isEmployeeRegistered(UUID id);
