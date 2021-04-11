@@ -10,6 +10,7 @@ public abstract class Employee {
     private String name, lastName;
     private Department department;
     private BankAccount account;
+    private IFamilyCompensationFund familyCompensationFund;
 
     public Employee(String name, String lastName, Department department, BankAccount account){
         this.id = UUID.randomUUID();
@@ -46,5 +47,9 @@ public abstract class Employee {
 
     public BankAccount getAccount(){
         return account;
+    }
+
+    public void setFamilyCompensationFund(IFamilyCompensationFund familyCompensationFund) {
+        this.familyCompensationFund = familyCompensationFund;
     }
 }

@@ -12,7 +12,7 @@ public class CafamFund implements IFamilyCompensationFund{
     public boolean registerEmployee(Employee employee) {
         boolean result = false;
 
-        if (registeredEmployees.contains(employee.getId())||employee instanceof EmployeeCommission){
+        if (!(registeredEmployees.contains(employee.getId()))){
             registeredEmployees.add(employee.getId());
             result = true;
         }

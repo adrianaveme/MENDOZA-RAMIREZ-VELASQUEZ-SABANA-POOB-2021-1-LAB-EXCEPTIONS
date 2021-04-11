@@ -1,8 +1,6 @@
 import com.github.javafaker.Faker;
 import entities.*;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,8 +21,8 @@ public class ColsubsidioFundTest {
 
     private static IFamilyCompensationFund colsubsidioFund;
 
-    @BeforeAll
-    public static void setUp() {
+    @BeforeEach
+    public void setUp() {
         faker = new Faker(new Locale("en-US"));
 
         department = new Department("Engineering");
@@ -39,6 +37,13 @@ public class ColsubsidioFundTest {
         employees.add(employeeCommission);
 
         colsubsidioFund = new ColsubsidioFund();
+    }
+
+    @AfterEach
+    public void tearDown() {
+        employeeSalary = null;
+        employeeCommission = null;
+        employeeHours = null;
     }
 
     @Test

@@ -24,10 +24,11 @@ public class ColsubsidioFund implements IFamilyCompensationFund {
 
     boolean result = false;
 
-    if (!(isEmployeeRegistered(employee.getId())||employee instanceof EmployeeCommission)) {
-        registeredEmployees.put(employee.getId(),employee);
-        result = true;
-
+    if (!(isEmployeeRegistered(employee.getId()))) {
+        if (!(employee instanceof EmployeeCommission)) {
+            registeredEmployees.put(employee.getId(), employee);
+            result = true;
+        }
     }
 
     return result;

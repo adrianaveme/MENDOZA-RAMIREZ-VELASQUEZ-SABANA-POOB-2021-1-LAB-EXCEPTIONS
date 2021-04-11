@@ -22,12 +22,15 @@ public class SabanaPayrollTest {
     private static EmployeeCommission employeeCommission;
 
     private static SabanaPayroll sabanaPayroll;
+    private static ColsubsidioFund colsubsidioFund;
+    private static CompensarFund compensarFund;
 
     @BeforeAll
     public static void setUp() {
         faker = new Faker(new Locale("en-US"));
 
-        department = new Department("Engineering", employees);
+        colsubsidioFund = new ColsubsidioFund();
+        compensarFund = new CompensarFund();
 
         employeeSalary = new EmployeeSalary(faker.name().firstName(), faker.name().lastName(), department, 1000000);
         employeeHours = new EmployeeHours(faker.name().firstName(), faker.name().lastName(), department, 40);
@@ -38,6 +41,8 @@ public class SabanaPayrollTest {
         employees.add(employeeHours);
         employees.add(employeeCommission);
 
+        department = new Department("Engineering", employees);
+
         departments = new ArrayList<>();
         departments.add(department);
 
@@ -45,16 +50,16 @@ public class SabanaPayrollTest {
     }
 
     @Test
-    public void assigneColsubsidioFamilyCompensation() {
+    public void assignColsubsidioFamilyCompensation() {
 
-        boolean result = sabanaPayroll.assigneFamilyCompensation(ColsubsidioFund.class.getSimpleName(), employeeSalary.getId());
+        boolean result = sabanaPayroll.assignFamilyCompensation(colsubsidioFund, employeeSalary.getId());
         assertTrue(result);
     }
 
     @Test
-    public void assigneCompensarFamilyCompensation() {
+    public void assignCompensarFamilyCompensation() {
 
-        boolean result = sabanaPayroll.assigneFamilyCompensation(CompensarFund.class.getSimpleName(), employeeSalary.getId());
+        boolean result = sabanaPayroll.assignFamilyCompensation(compensarFund, employeeSalary.getId());
         assertTrue(result);
     }
 }

@@ -90,6 +90,21 @@ public class SabanaPayroll {
         return cont;
     }
 
+    public boolean assignFamilyCompensation(IFamilyCompensationFund fund, UUID id){
+        boolean result = false;
+
+        Employee e = findEmployee(id);
+
+        if (e!=null){
+            if (fund.registerEmployee(e)){
+                e.setFamilyCompensationFund(fund);
+                result = true;
+            }
+        }
+
+        return result;
+    }
+
     public Employee findEmployee(UUID id){
         Employee res = null;
 
