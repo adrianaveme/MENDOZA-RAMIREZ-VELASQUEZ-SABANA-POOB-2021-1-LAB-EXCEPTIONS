@@ -50,6 +50,7 @@ public class CompensarFund implements IFamilyCompensationFund{
 
     @Override
     public String printBenefits() {
-        return null;
+        return "The benefits of a Compensar Fund are:" +
+                " access to facilities like swimming pools and dance halls.";
     }
 }
