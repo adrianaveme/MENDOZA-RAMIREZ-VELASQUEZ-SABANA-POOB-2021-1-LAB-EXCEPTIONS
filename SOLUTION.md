@@ -161,6 +161,15 @@ _____
 * Cylinder implementa a GeometricShape3D
 * Cylinder es un GeometricShape3D
 
+### *NOTA*
+
+Cambio en CylinderTest, shouldCalculateVolume();
+El volumen fue calculado para un cilindro de altura 20.5 y radio 14.5 aparte. El resultado fue disntindo de aquel dado por la prueba.
+
+La prueba decia que debia dar 4310, pero realmente da 13542.
+
+
+
 
 
 
