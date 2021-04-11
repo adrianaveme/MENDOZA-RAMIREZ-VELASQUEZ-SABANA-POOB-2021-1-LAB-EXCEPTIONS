@@ -1,6 +1,6 @@
 package edu.sabana.poob;
 
-public class Rectangle extends Shape {
+public class Rectangle extends Shape implements GeometricShape2D{
 
     private double width = 1.0;
     private double length = 1.0;

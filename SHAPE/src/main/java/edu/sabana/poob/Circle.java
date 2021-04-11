@@ -32,7 +32,7 @@ public class Circle extends Shape implements GeometricShape2D{
         return 2*radius*PI;
     }
 
-    @Override
+    /*@Override
     public String toString() {
         String result;
 
@@ -46,4 +46,6 @@ public class Circle extends Shape implements GeometricShape2D{
 
         return result;
     }
+
+     */
 }
