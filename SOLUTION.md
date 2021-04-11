@@ -135,6 +135,31 @@ _____
 
 ![image](https://github.com/adrianaveme/MENDOZA-RAMIREZ-VELASQUEZ-SABANA-POOB-2021-1-LAB-ABSTRACT-CLASS/blob/master/Screenshots/Dise%C3%B1o%20en%20diagrama%20de%20clases%20SabanaPayroll.png)
 
+# LAB INTERFACES
+
+## Parte 1
+
+### ¿Cuál es la relación entre `Circle` y `Shape`?
+
+* Circle hereda de Shape
+* Circle es un Shape
+* Circle extiende a Shape.
+
+### ¿Cuál es la relación entre `Cylinder` y `Shape`?
+
+* Cylinder hereda de Circle y Circle hereda de Shape.
+* Cylinder es un Shape y es un Circle.
+* Cylinder extiende a Circle.
+
+### ¿Cuál es la relación entre `Circle` y `GeometricShape2D`?
+
+* Circle implementa a GeometricShape2D
+* Circle es un GeometricShape2D
+
+### ¿Cuál es la relación entre `Cylinder` y `GeometricShape3D`?
+
+* Cylinder implementa a GeometricShape3D
+* Cylinder es un GeometricShape3D
 
 
 
