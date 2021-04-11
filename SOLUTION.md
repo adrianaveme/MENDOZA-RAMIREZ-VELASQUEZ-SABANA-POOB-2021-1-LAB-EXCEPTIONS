@@ -171,6 +171,10 @@ La prueba decia que debia dar 4310, pero realmente da 13542.
 2. El volumen fue calculado para un cilindro de altura 42.1 y radio 23.5 aparte. El resultado fue disntindo de aquel dado por la prueba.
 La prueba decia que debia dar 15522, pero realmente da 73050.
 
+Cambios en CylinderTest, shouldCalculateSuperficialArea();
+
+1. Cambiamos el área superficial de la prueba de 3188 a 3189 para que el valor concuerde con la constante de PI que hemos estado utilizando (3.142).
+
 
 
 
