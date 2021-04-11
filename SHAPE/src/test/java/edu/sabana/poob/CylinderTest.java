@@ -29,7 +29,7 @@ public class CylinderTest {
     @Test
     public void shouldCalculatePerimeter() {
 
-        assertEquals(62, (int) c1.getPerimeter());
+        assertEquals(6, (int) c1.getPerimeter());
         assertEquals(91, (int) c2.getPerimeter());
         assertEquals(147, (int) c3.getPerimeter());
     }

@@ -181,6 +181,10 @@ Cambios en CylinderTest, shouldCalculateDiameter();
 
 1. Cambios en la primera prueba. Decía que debía dar 20 pero el valor real es 2.
 
+Cambios en CylinderTest, shouldCalculatePerimeter();
+
+1. Cambios para el primer cilindro. La prueba decía que debía dar 62 pero en realidad el perimetro es 6.
+
 
 
 
