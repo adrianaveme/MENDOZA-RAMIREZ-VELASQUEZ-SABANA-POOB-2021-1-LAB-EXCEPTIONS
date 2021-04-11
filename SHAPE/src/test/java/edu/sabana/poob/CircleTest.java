@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CircleTest {
 
@@ -69,6 +70,11 @@ public class CircleTest {
         assertEquals("This is a Circle with color NONE and radius 1", c4.toString());
         assertEquals("This is a Circle with color NONE and radius 20", c5.toString());
         assertEquals("This is a Circle with color green and radius 3", c6.toString());
+
+        assertTrue(c1.toStringGeometricShape2D().contains("This is a Circle"));
+        assertTrue(c2.toStringGeometricShape2D().contains("This is a Circle"));
+        assertTrue(c3.toStringGeometricShape2D().contains("This is a Circle"));
+        assertTrue(c4.toStringGeometricShape2D().contains("This is a Circle"));
 
     }
 
