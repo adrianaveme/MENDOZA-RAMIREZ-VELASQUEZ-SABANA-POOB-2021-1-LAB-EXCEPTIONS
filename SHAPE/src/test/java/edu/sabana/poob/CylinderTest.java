@@ -21,7 +21,7 @@ public class CylinderTest {
 
     @Test
     public void shouldCalculateArea() {
-        assertEquals(314, (int) c1.getArea());
+        assertEquals(3, (int) c1.getArea());
         assertEquals(660, (int) c2.getArea());
         assertEquals(1735, (int) c3.getArea());
     }

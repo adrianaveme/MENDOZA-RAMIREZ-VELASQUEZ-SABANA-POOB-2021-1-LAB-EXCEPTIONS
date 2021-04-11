@@ -185,6 +185,12 @@ Cambios en CylinderTest, shouldCalculatePerimeter();
 
 1. Cambios para el primer cilindro. La prueba decía que debía dar 62 pero en realidad el perimetro es 6.
 
+Cambios en CylinderTest, shouldCalculatePerimeter();
+
+2. Cambios para el primer cilindro. La prueba decía que debía dar 314 pero en realidad el área es 3.
+
+
+
 
 
 
