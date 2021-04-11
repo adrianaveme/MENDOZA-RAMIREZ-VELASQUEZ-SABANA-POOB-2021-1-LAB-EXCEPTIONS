@@ -21,7 +21,7 @@ public interface GeometricShape3D {
 
     default String toStringGeometricShape3D() {
         return String.format("This is a %s with volume %s and superficial area %s"
-                , this.getClass().getName()
+                , this.getClass().getSimpleName()
                 , this.getVolume()
                 , this.getSuperficialArea());
     }

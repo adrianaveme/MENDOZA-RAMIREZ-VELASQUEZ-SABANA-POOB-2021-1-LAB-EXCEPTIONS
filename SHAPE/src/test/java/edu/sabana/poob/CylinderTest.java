@@ -37,7 +37,7 @@ public class CylinderTest {
     @Test
     public void shouldCalculateDiameter() {
 
-        assertEquals(20, (int) c1.getDiameter());
+        assertEquals(2, (int) c1.getDiameter());
         assertEquals(29, (int) c2.getDiameter());
         assertEquals(47, (int) c3.getDiameter());
     }
@@ -61,8 +61,8 @@ public class CylinderTest {
     @Test
     public void shouldPrintCylinder() {
 
-        assertTrue(c1.toStringGeometricShape2D().contains("This is a Cylinder"));
-        assertTrue(c2.toStringGeometricShape2D().contains("This is a Cylinder"));
-        assertTrue(c3.toStringGeometricShape2D().contains("This is a Cylinder"));
+        assertTrue(c1.toStringGeometricShape3D().contains("This is a Cylinder"));
+        assertTrue(c2.toStringGeometricShape3D().contains("This is a Cylinder"));
+        assertTrue(c3.toStringGeometricShape3D().contains("This is a Cylinder"));
     }
 }
