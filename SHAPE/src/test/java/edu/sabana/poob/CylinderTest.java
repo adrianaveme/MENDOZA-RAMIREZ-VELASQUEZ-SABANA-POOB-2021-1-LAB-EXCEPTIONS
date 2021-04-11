@@ -55,7 +55,7 @@ public class CylinderTest {
 
         assertEquals(12, (int) c1.getSuperficialArea());
         assertEquals(3189, (int) c2.getSuperficialArea());
-        assertEquals(3462, (int) c3.getSuperficialArea());
+        assertEquals(9687, (int) c3.getSuperficialArea());
     }
 
     @Test

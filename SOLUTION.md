@@ -175,6 +175,8 @@ Cambios en CylinderTest, shouldCalculateSuperficialArea();
 
 1. Cambiamos el área superficial de la prueba de 3188 a 3189 para que el valor concuerde con la constante de PI que hemos estado utilizando (3.142).
 
+2. Cambiamos el área superficial de la prueba de 3462 a 9687 para que el valor concuerde con la constante de PI que hemos estado utilizando (3.142).
+
 
 
 
