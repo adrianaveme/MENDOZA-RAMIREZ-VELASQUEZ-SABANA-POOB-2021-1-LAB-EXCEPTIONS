@@ -190,8 +190,16 @@ Cambios en CylinderTest, shouldCalculatePerimeter();
 2. Cambios para el primer cilindro. La prueba decía que debía dar 314 pero en realidad el área es 3.
 
 
-## CylinderTest Screenshot
+### CylinderTest Screenshot
 ![image](https://user-images.githubusercontent.com/79488147/114290521-e6c4a500-9a45-11eb-8d95-22157971a81c.png)
+
+## Parte 2
+
+###TriangleTest Screenshot
+![image](https://user-images.githubusercontent.com/79488147/114290877-563b9400-9a48-11eb-9423-d9575169ef8c.png)
+
+### RectangleTest Screenshot
+![image](https://user-images.githubusercontent.com/79488147/114290888-73706280-9a48-11eb-97a9-bc9c9e9bf215.png)
 
 
 
