@@ -23,11 +23,11 @@ public class RectangleSolid extends Rectangle implements GeometricShape3D {
 
     @Override
     public double getVolume() {
-        return 0;
+        return getArea()*depth;
     }
 
     @Override
     public double getSuperficialArea() {
-        return 0;
+        return 2*(getArea()+(getLength()*depth)+(getWidth()*depth));
     }
 }
