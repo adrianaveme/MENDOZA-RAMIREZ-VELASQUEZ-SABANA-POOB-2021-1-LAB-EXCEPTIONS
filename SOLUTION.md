@@ -195,11 +195,27 @@ Cambios en CylinderTest, shouldCalculatePerimeter();
 
 ## Parte 2
 
-###TriangleTest Screenshot
+**Implementando GeometricShape2D**
+
+### TriangleTest Screenshot
 ![image](https://user-images.githubusercontent.com/79488147/114290877-563b9400-9a48-11eb-9423-d9575169ef8c.png)
 
 ### RectangleTest Screenshot
 ![image](https://user-images.githubusercontent.com/79488147/114290888-73706280-9a48-11eb-97a9-bc9c9e9bf215.png)
+
+**Implementando GeometricShape3D**
+
+### RectangleSolidTest Screenshot
+![image](https://user-images.githubusercontent.com/79488147/114291989-22b13780-9a51-11eb-834f-93d99de68602.png)
+
+
+### PyramidTest Screenshot
+
+### CubeTest Screenshot
+![image](https://user-images.githubusercontent.com/79488147/114291979-0dd4a400-9a51-11eb-811e-849203b7e5c3.png)
+
+
+
 
 
 
