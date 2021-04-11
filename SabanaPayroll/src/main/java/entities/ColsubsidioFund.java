@@ -53,6 +53,6 @@ public class ColsubsidioFund implements IFamilyCompensationFund {
 
     @Override
     public String printBenefits() {
-        return null;
+        return "The benefits of a Colsubsidio Fund are: access to facilities like gyms and training centers and courses every month for varied skills";
     }
 }
