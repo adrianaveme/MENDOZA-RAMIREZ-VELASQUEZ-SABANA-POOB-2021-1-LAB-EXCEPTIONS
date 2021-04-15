@@ -19,9 +19,11 @@ public class CompensarFund implements IFamilyCompensationFund{
     public boolean registerEmployee(Employee employee) {
         boolean result = false;
 
-        if (!(registeredEmployees.contains(employee.getId())||employee instanceof EmployeeHours)){
-            registeredEmployees.add(employee.getId());
-            result = true;
+        if (!(registeredEmployees.contains(employee.getId()))){
+            if(!(employee instanceof EmployeeHours)){
+                registeredEmployees.add(employee.getId());
+                result = true;
+            }
         }
         return result;
     }
