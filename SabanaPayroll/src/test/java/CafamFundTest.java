@@ -21,7 +21,7 @@ public class CafamFundTest {
     private static Department department;
 
     private static EmployeeCommission employeeCommission;
-    
+
 
     @BeforeEach
     public void setUp() {
@@ -57,13 +57,6 @@ public class CafamFundTest {
     public void shouldRegisterEmployee() {
 
         assertTrue(cafamFund.registerEmployee(employeeSalary));
-    }
-
-    @Test
-    @DisplayName("GIVEN a employee by hours WHEN try to register THEN fails")
-    public void shouldNotRegisterEmployeeWhenByCommission() {
-
-        assertFalse(cafamFund.registerEmployee(employeeHours));
     }
 
     @Test
