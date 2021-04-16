@@ -85,7 +85,7 @@ public class CompensarFundTest {
 
     @Test
     @DisplayName("GIVEN a employee by salary registered WHEN try to delete THEN success")
-    public void shouldDeleteEmployee() {
+    public void shouldDeleteEmployee() throws FamilyCompensationFundException {
 
         assertTrue(compensarFund.registerEmployee(employeeSalary));
         assertTrue(compensarFund.deleteEmployee(employeeSalary.getId()));
@@ -103,7 +103,7 @@ public class CompensarFundTest {
 
     @Test
     @DisplayName("GIVEN a employee by salary registered WHEN try to validate is registered THEN success")
-    public void shouldValidateEmployeeIsRegistered() {
+    public void shouldValidateEmployeeIsRegistered() throws FamilyCompensationFundException {
 
         assertTrue(compensarFund.registerEmployee(employeeSalary));
         assertTrue(compensarFund.isEmployeeRegistered(employeeSalary.getId()));
@@ -111,7 +111,7 @@ public class CompensarFundTest {
 
     @Test
     @DisplayName("GIVEN a employee by salary not registered WHEN try to validate is registered THEN fails")
-    public void shouldNotValidateEmployeeIsRegistered() {
+    public void shouldNotValidateEmployeeIsRegistered() throws FamilyCompensationFundException {
 
         assertFalse(compensarFund.isEmployeeRegistered(employeeSalary.getId()));
     }
