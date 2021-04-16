@@ -75,10 +75,6 @@ public class ColsubsidioFundTest {
         assertFalse(colsubsidioFund.registerEmployee(employeeSalary));
     }
 
-
-
-
-
     @Test
     @DisplayName("GIVEN a employee by salary registered WHEN try to delete THEN success")
     public void shouldDeleteEmployee() {
@@ -86,8 +82,6 @@ public class ColsubsidioFundTest {
         assertTrue(colsubsidioFund.registerEmployee(employeeSalary));
         assertTrue(colsubsidioFund.deleteEmployee(employeeSalary.getId()));
     }
-
-
 
     @Test
     @DisplayName("GIVEN a employee by salary not registered WHEN try to delete THEN fails")
