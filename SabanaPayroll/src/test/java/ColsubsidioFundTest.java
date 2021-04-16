@@ -12,7 +12,7 @@ public class ColsubsidioFundTest {
 
     private static Faker faker;
 
-    private static List<Employee> employees;
+    private static ArrayList<Employee> employees;
     private static Department department;
 
     private static EmployeeSalary employeeSalary;
@@ -25,22 +25,29 @@ public class ColsubsidioFundTest {
     public void setUp() {
         faker = new Faker(new Locale("en-US"));
 
-        department = new Department("Engineering");
+        employees = new ArrayList<>();
+
+        department = new Department("Engineering", employees);
 
         employeeSalary = new EmployeeSalary(faker.name().firstName(), faker.name().lastName(), department, 1000000);
         employeeHours = new EmployeeHours(faker.name().firstName(), faker.name().lastName(), department, 40);
         employeeCommission = new EmployeeCommission(faker.name().firstName(), faker.name().lastName(), department, 100);
 
-        employees = new ArrayList<>();
         employees.add(employeeSalary);
         employees.add(employeeHours);
         employees.add(employeeCommission);
+
 
         colsubsidioFund = new ColsubsidioFund();
     }
 
     @AfterEach
-    public void tearDown() {
+    protected void tearDown() {
+
+        faker =null;
+        department =null;
+        colsubsidioFund = null;
+        employees.clear();
         employeeSalary = null;
         employeeCommission = null;
         employeeHours = null;
@@ -61,12 +68,16 @@ public class ColsubsidioFundTest {
     }
 
     @Test
-    @DisplayName("GIVEN a employee by salary registered WHEN try to register again THEN fails")
+    @DisplayName("GIVEN an employee by salary registered WHEN try to register again THEN fails")
     public void shouldNotRegisterEmployeeWhenDuplicated() {
 
         assertTrue(colsubsidioFund.registerEmployee(employeeSalary));
         assertFalse(colsubsidioFund.registerEmployee(employeeSalary));
     }
+
+
+
+
 
     @Test
     @DisplayName("GIVEN a employee by salary registered WHEN try to delete THEN success")
@@ -75,6 +86,8 @@ public class ColsubsidioFundTest {
         assertTrue(colsubsidioFund.registerEmployee(employeeSalary));
         assertTrue(colsubsidioFund.deleteEmployee(employeeSalary.getId()));
     }
+
+
 
     @Test
     @DisplayName("GIVEN a employee by salary not registered WHEN try to delete THEN fails")
@@ -90,6 +103,7 @@ public class ColsubsidioFundTest {
         assertTrue(colsubsidioFund.registerEmployee(employeeSalary));
         assertTrue(colsubsidioFund.isEmployeeRegistered(employeeSalary.getId()));
     }
+
 
     @Test
     @DisplayName("GIVEN a employee by salary not registered WHEN try to validate is registered THEN fails")

@@ -1,8 +1,6 @@
 import com.github.javafaker.Faker;
 import entities.*;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,19 +10,21 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class CafamFundTest {
 
+    private static EmployeeSalary employeeSalary;
+    private static EmployeeHours employeeHours;
+
+    private static IFamilyCompensationFund cafamFund;
+
     private static Faker faker;
 
     private static List<Employee> employees;
     private static Department department;
 
-    private static EmployeeSalary employeeSalary;
-    private static EmployeeHours employeeHours;
     private static EmployeeCommission employeeCommission;
 
-    private static IFamilyCompensationFund cafamFund;
 
-    @BeforeAll
-    public static void setUp() {
+    @BeforeEach
+    public void setUp() {
         faker = new Faker(new Locale("en-US"));
 
         department = new Department("Engineering");
@@ -40,19 +40,23 @@ public class CafamFundTest {
 
         cafamFund = new CafamFund();
     }
+    @AfterEach
+    protected void tearDown() {
+
+        faker =null;
+        department =null;
+        cafamFund = null;
+        employees.clear();
+        employeeSalary = null;
+        employeeCommission = null;
+        employeeHours = null;
+    }
 
     @Test
     @DisplayName("GIVEN a employee by salary WHEN try to register THEN success")
     public void shouldRegisterEmployee() {
 
         assertTrue(cafamFund.registerEmployee(employeeSalary));
-    }
-
-    @Test
-    @DisplayName("GIVEN a employee by hours WHEN try to register THEN fails")
-    public void shouldNotRegisterEmployeeWhenByCommission() {
-
-        assertFalse(cafamFund.registerEmployee(employeeHours));
     }
 
     @Test

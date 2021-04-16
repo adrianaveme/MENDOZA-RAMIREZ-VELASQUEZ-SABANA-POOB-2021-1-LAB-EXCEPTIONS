@@ -1,6 +1,7 @@
 import com.github.javafaker.Faker;
 import entities.*;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -23,8 +24,8 @@ public class CompensarFundTest {
 
     private static IFamilyCompensationFund compensarFund;
 
-    @BeforeAll
-    public static void setUp() {
+    @BeforeEach
+    public void setUp() {
         faker = new Faker(new Locale("en-US"));
 
         department = new Department("Engineering");
@@ -39,6 +40,17 @@ public class CompensarFundTest {
         employees.add(employeeCommission);
 
         compensarFund = new CompensarFund();
+    }
+    @AfterEach
+    protected void tearDown() {
+
+        faker =null;
+        department =null;
+        compensarFund = null;
+        employees.clear();
+        employeeSalary = null;
+        employeeCommission = null;
+        employeeHours = null;
     }
 
     @Test
@@ -62,6 +74,8 @@ public class CompensarFundTest {
         assertTrue(compensarFund.registerEmployee(employeeSalary));
         assertFalse(compensarFund.registerEmployee(employeeSalary));
     }
+
+
 
     @Test
     @DisplayName("GIVEN a employee by salary registered WHEN try to delete THEN success")
