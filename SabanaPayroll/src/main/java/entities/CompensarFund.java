@@ -28,25 +28,20 @@ public class CompensarFund implements IFamilyCompensationFund{
     }
 
     @Override
-    public boolean deleteEmployee(UUID id) {
+    public boolean deleteEmployee(UUID id) throws FamilyCompensationFundException {
 
-        boolean result = false;
-        if(isEmployeeRegistered(id)){
-            registeredEmployees.remove(id);
-            result = true;
-        }
+        if(!(isEmployeeRegistered(id)))
+            throw new FamilyCompensationFundException (FamilyCompensationFundException.EMPLOYEE_REGISTERED);
 
-        return result;
+        return registeredEmployees.remove(id);
     }
 
     @Override
-    public boolean isEmployeeRegistered(UUID id) {
+    public boolean isEmployeeRegistered(UUID id) throws FamilyCompensationFundException {
 
-        boolean result = false;
-        if (registeredEmployees.contains(id)){
-            result= true;
-        }
-        return result;
+        if (!(registeredEmployees.contains(id)))
+            throw new FamilyCompensationFundException(FamilyCompensationFundException.EMPLOYEE_IS_NOT_REGISTERED);
+        return registeredEmployees.contains(id);
     }
 
     @Override
