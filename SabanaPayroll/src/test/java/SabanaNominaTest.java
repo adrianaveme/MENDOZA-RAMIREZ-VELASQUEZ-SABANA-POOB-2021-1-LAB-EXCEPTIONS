@@ -4,9 +4,7 @@ import org.junit.jupiter.api.*;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class SabanaNominaTest {
 
@@ -69,7 +67,7 @@ public class SabanaNominaTest {
 
 
     @Test
-    public void shouldCalculateEmployeeSalary(){
+    public void shouldCalculateEmployeeSalary() throws SabanaPayrollExceptions{
         assertEquals(400.0, sp.calculateEmployeeSalary(ec1.getId()));
         assertEquals(460.0, sp.calculateEmployeeSalary(es1.getId()));
         assertEquals(30.0, sp.calculateEmployeeSalary(eh1.getId()));
@@ -96,21 +94,21 @@ public class SabanaNominaTest {
     }
 
     @Test
-    public void shouldDepositToEmployee(){
+    public void shouldDepositToEmployee() throws SabanaPayrollExceptions{
         assertTrue(sp.depositToEmployee(10000, ec1.getId()));
         assertTrue(sp.depositToEmployee(4000, es1.getId()));
         assertTrue(sp.depositToEmployee(12000, eh1.getId()));
     }
 
     @Test
-    public void shouldNotDepositToEmployee(){
+    public void shouldNotDepositToEmployee() throws SabanaPayrollExceptions{
         assertFalse(sp.depositToEmployee(4000, ec1.getId()));
         assertFalse(sp.depositToEmployee(2000, es1.getId()));
         assertFalse(sp.depositToEmployee(1000, eh1.getId()));
     }
 
     @Test
-    public void shouldCalculateEmployeeBalance(){
+    public void shouldCalculateEmployeeBalance() throws SabanaPayrollExceptions{
         assertTrue(sp.depositToEmployee(11000, ec1.getId())); //6000
         assertTrue(sp.depositToEmployee(4000, es1.getId())); //2000
         assertFalse(sp.depositToEmployee(2000, es1.getId())); //0
@@ -121,7 +119,7 @@ public class SabanaNominaTest {
         assertEquals(10000, sp.calculateEmployeeBalance(eh1.getId()));
     }
     @Test
-    public void shouldCalculateAllEmployeesBalance(){
+    public void shouldCalculateAllEmployeesBalance() throws SabanaPayrollExceptions {
         assertTrue(sp.depositToEmployee(9000, ec1.getId())); //4000
         assertTrue(sp.depositToEmployee(4000, es1.getId())); //2000
         assertFalse(sp.depositToEmployee(2000, es1.getId())); //0

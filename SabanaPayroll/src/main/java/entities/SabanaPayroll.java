@@ -30,17 +30,13 @@ public class SabanaPayroll {
         return cont;
     }
 
-    public double calculateEmployeeSalary(UUID id) {
-        double cont = 0;
-
-
+    public double calculateEmployeeSalary(UUID id) throws SabanaPayrollExceptions{
         Employee employee = findEmployee(id);
 
-        if (employee!=null) {
-            cont = employee.calculateSalary();
-        }
+        if (employee == null)
+            throw new SabanaPayrollExceptions(SabanaPayrollExceptions.NONEXISTENT_EMPLOYEE);
 
-        return cont;
+        return employee.calculateSalary();
     }
 
     public void printPayroll(){
@@ -52,29 +48,25 @@ public class SabanaPayroll {
         }
     }
 
-    public boolean depositToEmployee(double amount, UUID id) {
-        boolean result = false;
-
+    public boolean depositToEmployee(double amount, UUID id) throws SabanaPayrollExceptions {
 
         Employee employee = findEmployee(id);
 
-        if (employee!=null) {
-            result = employee.getAccount().deposit(amount);
-        }
+        if (employee==null)
+            throw new SabanaPayrollExceptions(SabanaPayrollExceptions.NONEXISTENT_EMPLOYEE);
 
-        return result;
+        return employee.getAccount().deposit(amount);
     }
 
-    public double calculateEmployeeBalance(UUID id){
-        double result = 0;
+    public double calculateEmployeeBalance(UUID id) throws SabanaPayrollExceptions {
 
         Employee employee = findEmployee(id);
 
-        if (employee!=null) {
-            result = employee.getAccount().getBalance();
-        }
+        if (employee==null)
+            throw new SabanaPayrollExceptions(SabanaPayrollExceptions.NONEXISTENT_EMPLOYEE);
 
-        return result;
+
+        return employee.getAccount().getBalance();
     }
 
     public double calculateAllEmployeesBalance(){
