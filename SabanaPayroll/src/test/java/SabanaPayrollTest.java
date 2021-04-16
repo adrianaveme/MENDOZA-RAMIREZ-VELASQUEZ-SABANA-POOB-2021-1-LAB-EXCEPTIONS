@@ -1,6 +1,8 @@
 import com.github.javafaker.Faker;
 import entities.*;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -24,13 +26,15 @@ public class SabanaPayrollTest {
     private static SabanaPayroll sabanaPayroll;
     private static ColsubsidioFund colsubsidioFund;
     private static CompensarFund compensarFund;
+    private static CafamFund cafamFund;
 
-    @BeforeAll
-    public static void setUp() {
+    @BeforeEach
+    public void setUp() {
         faker = new Faker(new Locale("en-US"));
 
         colsubsidioFund = new ColsubsidioFund();
         compensarFund = new CompensarFund();
+        cafamFund = new CafamFund();
 
         employeeSalary = new EmployeeSalary(faker.name().firstName(), faker.name().lastName(), department, 1000000);
         employeeHours = new EmployeeHours(faker.name().firstName(), faker.name().lastName(), department, 40);
@@ -49,6 +53,21 @@ public class SabanaPayrollTest {
         sabanaPayroll = new SabanaPayroll(departments);
     }
 
+    @AfterEach
+    protected void tearDown() {
+
+        faker =null;
+        department =null;
+        colsubsidioFund = null;
+        compensarFund = null;
+        cafamFund = null;
+        employees.clear();
+        employeeSalary = null;
+        employeeCommission = null;
+        employeeHours = null;
+
+    }
+
     @Test
     public void assignColsubsidioFamilyCompensation() {
 
@@ -62,4 +81,12 @@ public class SabanaPayrollTest {
         boolean result = sabanaPayroll.assignFamilyCompensation(compensarFund, employeeSalary.getId());
         assertTrue(result);
     }
+
+    @Test
+    public void assignCafamFamilyCompensation() {
+
+        boolean result = sabanaPayroll.assignFamilyCompensation(cafamFund, employeeSalary.getId());
+        assertTrue(result);
+    }
+
 }
