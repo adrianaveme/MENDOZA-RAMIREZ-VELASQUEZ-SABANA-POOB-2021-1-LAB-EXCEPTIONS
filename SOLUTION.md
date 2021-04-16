@@ -282,6 +282,7 @@ Pruebas SabanaPayroll con AssignFamilyCompensation
 * Con las palabras reservadas, try y catch se puede capturar la excepción. Try es el encargado de probar que el bloque de código tenga o no excepciones. En caso de que se produzca la excepción, Catch (que recibe como argumento throwable) se encarga de manejarlo, normalmente mostrando un mensaje de que ha causado el error. Un try puede tener más de un catch.
 
 ### ¿Cuál es la diferencia en la implementación de las pruebas? ¿Validan lo mismo?
-* Inicialmente si validan lo mismo, pero ahora todas utilizan excepciones. Esto quiere decir que ademas de validar lo que antes validaban, tambien se aseguran de que no hayan excepciones de ningun tipo, y si las hay, capturarlas o propagarlas.
+* Si la pregunta va dirigida a las pruebas que teníamos ya en el programa, inicialmente si validan lo mismo, pero ahora todas utilizan excepciones. Esto quiere decir que ademas de validar lo que antes validaban, también se aseguran de que no hayan excepciones de ningún tipo, y si las hay, capturarlas o propagarlas.
+* Si va dirigida a las dos pruebas propuestas por el profesor en este lab, entonces estas dos pruebas si validan lo mismo, ya que las dos están validando que el mensaje que se da cuando se lanza exception, sea el correcto. Pero la forma de implementar es distinta. Ya que la primera utiliza la palabra reservada try, y este al intentar realizar la acción lanza la excepción y catch la detecta y envía el mensaje y después se valida que sea el mensaje correcto. En cambio en la otra, no utiliza las palabras reservadas del anterior, pero utiliza assertThrows para verificar que si la lance y después revisa que el mensaje sea el correcto.
 
 
