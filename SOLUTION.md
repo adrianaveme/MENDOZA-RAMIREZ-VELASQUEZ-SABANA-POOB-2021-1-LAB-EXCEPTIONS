@@ -232,6 +232,23 @@ La prueba decia que debia dar 15522, pero realmente da 73050.
 Diagrama de clases Shape Design
 ![image](https://github.com/adrianaveme/MENDOZA-RAMIREZ-VELASQUEZ-SABANA-POOB-2021-1-LAB-INTERFACES/blob/master/Screenshots/Diagrama%20de%20clases%20Shape%20Design%20.png)
 
+## Parte 4 `Interfaces implementando en un contexto`
+
+Pruebas ColsubsidioFund
+
+![image](https://user-images.githubusercontent.com/78309222/114955575-9b820c00-9e22-11eb-906f-eac88a2cc135.png)
+
+
+Pruebas CompensarFund
+
+![image](https://user-images.githubusercontent.com/78309222/114954247-bef78780-9e1f-11eb-99d3-e696b8a71dbf.png)
+
+
+Pruebas CafamFund
+
+![image](https://user-images.githubusercontent.com/78309222/114954132-78099200-9e1f-11eb-87c4-0a86350cb2b2.png)
+
+
 ## Parte 5 - `Integrando interfaces`
 
 Diagrama de clases Sabana Payroll
@@ -241,6 +258,10 @@ Diagrama de clases Sabana Payroll
 Diagrama de secuencia AssignFamilyCompensation
 
 ![image](https://github.com/adrianaveme/MENDOZA-RAMIREZ-VELASQUEZ-SABANA-POOB-2021-1-LAB-INTERFACES/blob/master/Screenshots/assignFamilyCompensation%20diagrama%20de%20secuencia.png)
+
+Pruebas SabanaPayroll con AssignFamilyCompensation
+![image](https://user-images.githubusercontent.com/78309222/114956351-4f37cb80-9e24-11eb-95bf-b98b7a8d56aa.png)
+
 
 ## Parte 6 - `Interfaces diseñando en un contexto `
 
