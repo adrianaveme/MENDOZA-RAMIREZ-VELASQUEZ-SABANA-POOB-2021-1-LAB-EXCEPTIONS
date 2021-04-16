@@ -19,6 +19,9 @@ public class SabanaNominaTest {
     private static Checking ac1;
     private static Savings as1;
     private static Savings as2;
+    private static ColsubsidioFund colsubsidioFund;
+    private static CompensarFund compensarFund;
+    private static CafamFund cafamFund;
 
     @BeforeEach
     public void setUp() {
@@ -26,6 +29,10 @@ public class SabanaNominaTest {
         ArrayList<Department> departments = new ArrayList<>();
         ArrayList<Employee> employeesArt = new ArrayList<>();
         ArrayList<Employee> employeesEngineering = new ArrayList<>();
+
+        colsubsidioFund = new ColsubsidioFund();
+        compensarFund = new CompensarFund();
+        cafamFund = new CafamFund();
 
         d1 = new Department("arts", employeesArt);
         d2 = new Department("engineering", employeesEngineering);
@@ -123,6 +130,25 @@ public class SabanaNominaTest {
         assertEquals(16000, sp.calculateAllEmployeesBalance());
     }
 
+    @Test
+    public void assignColsubsidioFamilyCompensation() {
 
+        boolean result = sp.assignFamilyCompensation(colsubsidioFund, es1.getId());
+        assertTrue(result);
+    }
+
+    @Test
+    public void assignCompensarFamilyCompensation() {
+
+        boolean result = sp.assignFamilyCompensation(compensarFund, ec1.getId());
+        assertTrue(result);
+    }
+
+    @Test
+    public void assignCafamFamilyCompensation() {
+
+        boolean result = sp.assignFamilyCompensation(cafamFund, eh1.getId());
+        assertTrue(result);
+    }
 
 }
