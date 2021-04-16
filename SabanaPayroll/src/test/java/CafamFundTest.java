@@ -64,7 +64,6 @@ public class CafamFundTest {
     public void shouldNotRegisterEmployeeWhenDuplicated() throws FamilyCompensationFundException {
 
         assertTrue(cafamFund.registerEmployee(employeeSalary));
-        assertFalse(cafamFund.registerEmployee(employeeSalary));
 
         Exception e = assertThrows(FamilyCompensationFundException.class, () -> cafamFund.registerEmployee(employeeSalary));
         assertEquals(FamilyCompensationFundException.EMPLOYEE_REGISTERED, e.getMessage());
@@ -83,10 +82,9 @@ public class CafamFundTest {
     @DisplayName("GIVEN a employee by salary not registered WHEN try to delete THEN fails")
     public void shouldNotDeleteEmployee() throws FamilyCompensationFundException{
 
-        assertFalse(cafamFund.deleteEmployee(employeeSalary.getId()));
-
         Exception e = assertThrows(FamilyCompensationFundException.class, () -> cafamFund.deleteEmployee(employeeSalary.getId()));
-        assertEquals(FamilyCompensationFundException.EMPLOYEE_REGISTERED, e.getMessage());
+        assertEquals(FamilyCompensationFundException.EMPLOYEE_IS_NOT_REGISTERED, e.getMessage());
+
     }
 
     @Test
@@ -95,16 +93,16 @@ public class CafamFundTest {
 
         assertTrue(cafamFund.registerEmployee(employeeSalary));
         assertTrue(cafamFund.isEmployeeRegistered(employeeSalary.getId()));
+
     }
 
     @Test
     @DisplayName("GIVEN a employee by salary not registered WHEN try to validate is registered THEN fails")
     public void shouldNotValidateEmployeeIsRegistered() throws FamilyCompensationFundException{
 
-        assertFalse(cafamFund.isEmployeeRegistered(employeeSalary.getId()));
-
         Exception e = assertThrows(FamilyCompensationFundException.class, () -> cafamFund.isEmployeeRegistered(employeeSalary.getId()));
         assertEquals(FamilyCompensationFundException.EMPLOYEE_IS_NOT_REGISTERED, e.getMessage());
+
     }
 
     @Test
@@ -112,6 +110,7 @@ public class CafamFundTest {
 
         String benefits = cafamFund.printBenefits();
         assertNotNull(benefits);
+
     }
 
 }
