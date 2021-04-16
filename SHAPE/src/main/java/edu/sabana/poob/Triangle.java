@@ -16,7 +16,11 @@ public class Triangle extends Shape implements GeometricShape2D {
         super(color);
     }
 
-    public Triangle(double side1, double side2, double side3) {
+    public Triangle(double side1, double side2, double side3) throws ShapeException {
+
+        if (side1 <= 0 || side2 <= 0 || side3 <= 0)
+            throw new ShapeException(ShapeException.BAD_DIMENSION_SIDE);
+
         this.side1 = side1;
         this.side2 = side2;
         this.side3 = side3;

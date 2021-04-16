@@ -11,13 +11,21 @@ public class RectangleSolid extends Rectangle implements GeometricShape3D {
         super(color);
     }
 
-    public RectangleSolid(double width, double lenght, double depth) {
+    public RectangleSolid(double width, double lenght, double depth) throws ShapeException {
         super(width, lenght);
+
+        if (depth <= 0)
+            throw new ShapeException(ShapeException.BAD_DIMENSION_SIDE);
+
         this.depth = depth;
     }
 
-    public RectangleSolid(String color, double width, double lenght, double depth) {
+    public RectangleSolid(String color, double width, double lenght, double depth) throws ShapeException {
         super(color, width, lenght);
+
+        if (depth <= 0)
+            throw new ShapeException(ShapeException.BAD_DIMENSION_SIDE);
+
         this.depth = depth;
     }
 

@@ -9,11 +9,11 @@ public class Cube extends RectangleSolid{
         super(color);
     }
 
-    public Cube(double side){
+    public Cube(double side) throws ShapeException{
         super(side, side, side);
     }
 
-    public Cube(Double side, String color){
+    public Cube(Double side, String color) throws ShapeException{
         super(color, side, side, side);
     }
 

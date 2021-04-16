@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class RectangleSolidTest {
 
@@ -13,7 +14,7 @@ public class RectangleSolidTest {
     private static RectangleSolid rs4;
 
     @BeforeAll
-    public static void setUp() {
+    public static void setUp() throws ShapeException {
         rs1 = new RectangleSolid();
         rs2 = new RectangleSolid("yellow");
         rs3 = new RectangleSolid(3.0, 4.0, 5.0);
@@ -51,4 +52,56 @@ public class RectangleSolidTest {
         assertEquals(94.0, rs3.getSuperficialArea());
         assertEquals(81.0, rs4.getSuperficialArea());
     }
+
+    @Test
+    public void shouldNotCreateRectangleSolidWithWidthNegative() {
+
+        try {
+            new RectangleSolid(-1, 7, 9);
+        } catch (ShapeException e) {
+            assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+        }
+    }
+
+    @Test
+    public void shouldNotCreateRectangleSolidWithLengthNegative() {
+
+        try {
+            new RectangleSolid(1, -7, 9);
+        } catch (ShapeException e) {
+            assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+        }
+    }
+
+    @Test
+    public void shouldNotCreateRectangleSolidWithDepthNegative() {
+
+        try {
+            new RectangleSolid(1, 7, -9);
+        } catch (ShapeException e) {
+            assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+        }
+    }
+
+    @Test
+    public void shouldNotCreateRectangleSolidWithWidthZero() {
+
+        Exception e = assertThrows(ShapeException.class, () -> new RectangleSolid(0, 7, 9));
+        assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+    }
+
+    @Test
+    public void shouldNotCreateRectangleSolidWithLengthZero() {
+
+        Exception e = assertThrows(ShapeException.class, () -> new RectangleSolid(7, 0, 9));
+        assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+    }
+
+    @Test
+    public void shouldNotCreateRectangleSolidWithDepthZero() {
+
+        Exception e = assertThrows(ShapeException.class, () -> new RectangleSolid(7, 9, 0));
+        assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+    }
+
 }

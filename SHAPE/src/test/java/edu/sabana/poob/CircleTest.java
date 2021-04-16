@@ -3,8 +3,7 @@ package edu.sabana.poob;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CircleTest {
 
@@ -16,7 +15,7 @@ public class CircleTest {
     private static Circle c6;
 
     @BeforeAll
-    public static void setUp() {
+    public static void setUp() throws ShapeException {
         c1 = new Circle(10);
         c2 = new Circle(14.5);
         c3 = new Circle("red", 23.5);
@@ -64,15 +63,6 @@ public class CircleTest {
     @Test
     public void shouldPrintCircle() {
 
-        /* assertEquals("This is a Circle with color NONE and radius 10", c1.toString());
-        assertEquals("This is a Circle with color NONE and radius 14.5", c2.toString());
-        assertEquals("This is a Circle with color red and radius 23.5", c3.toString());
-        assertEquals("This is a Circle with color NONE and radius 1", c4.toString());
-        assertEquals("This is a Circle with color NONE and radius 20", c5.toString());
-        assertEquals("This is a Circle with color green and radius 3", c6.toString());
-
-         */
-
         assertTrue(c1.toStringGeometricShape2D().contains("This is a Circle"));
         assertTrue(c2.toStringGeometricShape2D().contains("This is a Circle"));
         assertTrue(c3.toStringGeometricShape2D().contains("This is a Circle"));
@@ -80,6 +70,23 @@ public class CircleTest {
         assertTrue(c5.toStringGeometricShape2D().contains("This is a Circle"));
         assertTrue(c6.toStringGeometricShape2D().contains("This is a Circle"));
 
+    }
+
+    @Test
+    public void shouldNorCreateCircleWithRadiusNegative() {
+
+        try {
+            new Circle(-1);
+        } catch (ShapeException e) {
+            assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+        }
+    }
+
+    @Test
+    public void shouldNorCreateCircleWithRadiusZero() {
+
+        Exception e = assertThrows(ShapeException.class, () -> new Circle(0));
+        assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
     }
 
 }

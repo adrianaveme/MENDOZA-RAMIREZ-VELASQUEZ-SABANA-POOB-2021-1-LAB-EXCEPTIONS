@@ -3,8 +3,7 @@ package edu.sabana.poob;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class RectangleTest {
 
@@ -14,7 +13,7 @@ public class RectangleTest {
     private static Rectangle r4;
 
     @BeforeAll
-    public static void setUp() {
+    public static void setUp() throws ShapeException {
         r1 = new Rectangle();
         r2 = new Rectangle("blue");
         r3 = new Rectangle(2.0, 3.0);
@@ -59,8 +58,40 @@ public class RectangleTest {
         assertTrue(r3.toStringGeometricShape2D().contains("This is a Rectangle"));
         assertTrue(r4.toStringGeometricShape2D().contains("This is a Rectangle"));
 
-
     }
 
+    @Test
+    public void shouldNotCreateRectangleWithWidthNegative() {
+
+        try {
+            new Rectangle(-1, 7);
+        } catch (ShapeException e) {
+            assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+        }
+    }
+
+    @Test
+    public void shouldNotCreateRectangleWithLengthNegative() {
+
+        try {
+            new Rectangle(1, -7);
+        } catch (ShapeException e) {
+            assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+        }
+    }
+
+    @Test
+    public void shouldNotCreateRectangleWithWidthZero() {
+
+        Exception e = assertThrows(ShapeException.class, () -> new Rectangle(0, 7));
+        assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+    }
+
+    @Test
+    public void shouldNotCreateRectangleWithLengthZero() {
+
+        Exception e = assertThrows(ShapeException.class, () -> new Rectangle(7, 0));
+        assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+    }
 
 }

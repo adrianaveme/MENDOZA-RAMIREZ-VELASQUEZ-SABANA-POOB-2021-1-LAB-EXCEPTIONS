@@ -9,12 +9,21 @@ public class Circle extends Shape implements GeometricShape2D{
         this.radius = 1.0;
     }
 
-    public Circle(double radius) {
+    public Circle(double radius) throws ShapeException {
+
+        if (radius <= 0)
+            throw new ShapeException(ShapeException.BAD_DIMENSION_SIDE);
+
         this.radius = radius;
     }
 
-    public Circle(String color, double radius) {
+    public Circle(String color, double radius) throws ShapeException {
         super(color);
+
+        if (radius <= 0)
+            throw new ShapeException(ShapeException.BAD_DIMENSION_SIDE);
+
+
         this.radius = radius;
     }
 

@@ -3,7 +3,8 @@ package edu.sabana.poob;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SquareTest {
 
@@ -13,7 +14,7 @@ public class SquareTest {
     private static Square s4;
 
     @BeforeAll
-    public static void setUp() {
+    public static void setUp() throws ShapeException {
         s1 = new Square(10);
         s2 = new Square("blue");
         s3 = new Square();
@@ -47,11 +48,29 @@ public class SquareTest {
     }
 
     @Test
-    public void shouldPrintCircle() {
+    public void shouldPrintSquare() {
 
-        assertEquals("This is a Square with color NONE, length 10.0 and width 10.0", s1.toString());
-        assertEquals("This is a Square with color blue, length 1.0 and width 1.0", s2.toString());
-        assertEquals("This is a Square with color NONE, length 1.0 and width 1.0", s3.toString());
-        assertEquals("This is a Square with color purple, length 25.0 and width 25.0", s4.toString());
+        assertTrue(s1.toStringGeometricShape2D().contains("This is a Square"));
+        assertTrue(s2.toStringGeometricShape2D().contains("This is a Square"));
+        assertTrue(s3.toStringGeometricShape2D().contains("This is a Square"));
+        assertTrue(s4.toStringGeometricShape2D().contains("This is a Square"));
+
+    }
+
+    @Test
+    public void shouldNotCreateSquareWithSideNegative() {
+
+        try {
+            new Square(-1);
+        } catch (ShapeException e) {
+            assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+        }
+    }
+
+    @Test
+    public void shouldNotCreateSquareWithSideZero() {
+
+        Exception e = assertThrows(ShapeException.class, () -> new Square(0));
+        assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
     }
 }

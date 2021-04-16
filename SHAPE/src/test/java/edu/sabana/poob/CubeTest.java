@@ -2,8 +2,7 @@ package edu.sabana.poob;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CubeTest {
     private static Cube cu1;
@@ -12,7 +11,7 @@ public class CubeTest {
     private static Cube cu4;
 
     @BeforeAll
-    public static void setUp() {
+    public static void setUp() throws ShapeException{
         cu1 = new Cube();
         cu2 = new Cube(5.0, "red");
         cu3 = new Cube("Green");
@@ -63,4 +62,22 @@ public class CubeTest {
         assertTrue(cu2.toStringGeometricShape3D().contains("This is a Cube"));
         assertTrue(cu3.toStringGeometricShape3D().contains("This is a Cube"));
     }
+
+    @Test
+    public void shouldNotCreateCubeWithSideNegative() {
+
+        try {
+            new Cube(-1);
+        } catch (ShapeException e) {
+            assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+        }
+    }
+
+    @Test
+    public void shouldNotCreateCubeWithSideZero() {
+
+        Exception e = assertThrows(ShapeException.class, () -> new Cube(0));
+        assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+    }
+
 }

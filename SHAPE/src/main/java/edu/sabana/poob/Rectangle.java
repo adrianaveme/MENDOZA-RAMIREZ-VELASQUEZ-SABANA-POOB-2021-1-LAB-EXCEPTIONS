@@ -13,13 +13,21 @@ public class Rectangle extends Shape implements GeometricShape2D{
         super(color);
     }
 
-    public Rectangle(double width, double lenght) {
+    public Rectangle(double width, double lenght) throws ShapeException {
+
+        if (width <= 0 || lenght <= 0)
+            throw new ShapeException(ShapeException.BAD_DIMENSION_SIDE);
+
         this.width = width;
         this.length = lenght;
     }
 
-    public Rectangle(String color, double width, double lenght) {
+    public Rectangle(String color, double width, double lenght) throws ShapeException {
         super(color);
+
+        if (width <= 0 || lenght <= 0)
+            throw new ShapeException(ShapeException.BAD_DIMENSION_SIDE);
+
         this.width = width;
         this.length = lenght;
     }

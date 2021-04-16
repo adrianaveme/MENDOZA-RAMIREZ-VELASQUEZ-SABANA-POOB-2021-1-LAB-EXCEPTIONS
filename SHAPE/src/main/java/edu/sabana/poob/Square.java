@@ -10,11 +10,11 @@ public class Square extends Rectangle{
         super(color);
     }
 
-    public Square(double side) {
+    public Square(double side) throws ShapeException {
         super(side, side);
     }
 
-    public Square(String color, double side) {
+    public Square(String color, double side) throws ShapeException {
         super(color, side, side);
 
     }

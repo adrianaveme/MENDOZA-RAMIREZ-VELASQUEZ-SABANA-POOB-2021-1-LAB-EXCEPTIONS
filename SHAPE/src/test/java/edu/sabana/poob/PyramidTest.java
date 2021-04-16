@@ -15,7 +15,7 @@ public class PyramidTest {
     private static Pyramid p4;
 
     @BeforeAll
-    public static void setUp() {
+    public static void setUp() throws ShapeException {
         p1 = new Pyramid();
         p2 = new Pyramid("yellow");
         p3 = new Pyramid(4.0,4.0,4.0,2*Math.sqrt(3));
@@ -65,4 +65,71 @@ public class PyramidTest {
         assertTrue(p4.toStringGeometricShape2D().contains("This is a Pyramid"));
     }
 
+    @Test
+    public void shouldNotCreatePyramidWithSize1Negative() {
+
+        try {
+            new Pyramid(-8, 7, 9, 1);
+        } catch (ShapeException e) {
+            assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+        }
+    }
+
+    @Test
+    public void shouldNotCreatePyramidWithSize2Negative() {
+
+        try {
+            new Pyramid(8, -7, 9, 1);
+        } catch (ShapeException e) {
+            assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+        }
+    }
+
+    @Test
+    public void shouldNotCreatePyramidWithSize3Negative() {
+
+        try {
+            new Pyramid(8, 7, -9, 1);
+        } catch (ShapeException e) {
+            assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+        }
+    }
+
+    @Test
+    public void shouldNotCreatePyramidWithHeightNegative() {
+
+        try {
+            new Pyramid(8, 7, 9, -1);
+        } catch (ShapeException e) {
+            assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+        }
+    }
+
+    @Test
+    public void shouldNotCreatePyramidWithSize1Zero() {
+
+        Exception e = assertThrows(ShapeException.class, () -> new Pyramid(0, 7, 7, 7));
+        assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+    }
+
+    @Test
+    public void shouldNotCreatePyramidWithSize2Zero() {
+
+        Exception e = assertThrows(ShapeException.class, () -> new Pyramid(7, 0, 7, 7));
+        assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+    }
+
+    @Test
+    public void shouldNotCreatePyramidWithSize3Zero() {
+
+        Exception e = assertThrows(ShapeException.class, () -> new Pyramid(7, 7, 0, 7));
+        assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+    }
+
+    @Test
+    public void shouldNotCreatePyramidWithHeightZero() {
+
+        Exception e = assertThrows(ShapeException.class, () -> new Pyramid(7, 7, 7, 0));
+        assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+    }
 }

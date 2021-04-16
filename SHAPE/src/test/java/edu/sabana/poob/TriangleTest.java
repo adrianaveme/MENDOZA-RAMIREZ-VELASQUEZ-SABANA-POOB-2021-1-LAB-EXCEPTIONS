@@ -13,7 +13,7 @@ public class TriangleTest {
     private static Triangle t4;
 
     @BeforeAll
-    public static void setUp() {
+    public static void setUp() throws ShapeException {
         t1 = new Triangle();
         t2 = new Triangle("yellow");
         t3 = new Triangle(4.0,6.0,4.0);
@@ -71,5 +71,56 @@ public class TriangleTest {
         assertTrue(t2.toStringGeometricShape2D().contains("This is a Triangle"));
         assertTrue(t3.toStringGeometricShape2D().contains("This is a Triangle"));
         assertTrue(t4.toStringGeometricShape2D().contains("This is a Triangle"));
+    }
+
+    @Test
+    public void shouldNotCreateTriangleWithSize1Negative() {
+
+        try {
+            new Triangle(-8, 7, 9);
+        } catch (ShapeException e) {
+            assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+        }
+    }
+
+    @Test
+    public void shouldNotCreateTriangleWithSize2Negative() {
+
+        try {
+            new Triangle(8, -7, 9);
+        } catch (ShapeException e) {
+            assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+        }
+    }
+
+    @Test
+    public void shouldNotCreateTriangleWithSize3Negative() {
+
+        try {
+            new Triangle(8, 7, -9);
+        } catch (ShapeException e) {
+            assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+        }
+    }
+
+    @Test
+    public void shouldNotCreateTriangleWithSize1Zero() {
+
+        Exception e = assertThrows(ShapeException.class, () -> new Triangle(0, 7, 7));
+        assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+    }
+
+    @Test
+    public void shouldNotCreateTriangleWithSize2Zero() {
+
+        Exception e = assertThrows(ShapeException.class, () -> new Triangle(7, 0, 7));
+        assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
+    }
+
+    @Test
+    public void shouldNotCreateTriangleWithSize3Zero() {
+
+        Exception e = assertThrows(ShapeException.class, () -> new Triangle(7, 7, 0));
+        assertEquals(ShapeException.BAD_DIMENSION_SIDE, e.getMessage());
     }
 }
