@@ -7,7 +7,7 @@ import java.util.UUID;
 
 public class ColsubsidioFund implements IFamilyCompensationFund {
 
-    private static final Map<UUID, Employee> registeredEmployees = new HashMap<>();
+    private Map<UUID, Employee> registeredEmployees = new HashMap<>();
 
     public ColsubsidioFund() {
 
