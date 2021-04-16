@@ -58,16 +58,16 @@ public class ColsubsidioFundTest {
     public void shouldRegisterEmployee() throws FamilyCompensationFundException {
 
         assertTrue(colsubsidioFund.registerEmployee(employeeSalary));
+
     }
 
     @Test
     @DisplayName("GIVEN a employee by commission WHEN try to register THEN fails")
     public void shouldNotRegisterEmployeeWhenByCommission() throws FamilyCompensationFundException {
 
-        assertFalse(colsubsidioFund.registerEmployee(employeeCommission));
-
         Exception e = assertThrows(FamilyCompensationFundException.class, () -> colsubsidioFund.registerEmployee(employeeCommission));
         assertEquals(FamilyCompensationFundException.EMPLOYEE_NOT_ALLOWED, e.getMessage());
+
     }
 
     @Test
@@ -75,10 +75,10 @@ public class ColsubsidioFundTest {
     public void shouldNotRegisterEmployeeWhenDuplicated() throws FamilyCompensationFundException {
 
         assertTrue(colsubsidioFund.registerEmployee(employeeSalary));
-        assertFalse(colsubsidioFund.registerEmployee(employeeSalary));
 
         Exception e = assertThrows(FamilyCompensationFundException.class, () -> colsubsidioFund.registerEmployee(employeeSalary));
         assertEquals(FamilyCompensationFundException.EMPLOYEE_REGISTERED, e.getMessage());
+
     }
 
     @Test
@@ -87,16 +87,16 @@ public class ColsubsidioFundTest {
 
         assertTrue(colsubsidioFund.registerEmployee(employeeSalary));
         assertTrue(colsubsidioFund.deleteEmployee(employeeSalary.getId()));
+
     }
 
     @Test
     @DisplayName("GIVEN a employee by salary not registered WHEN try to delete THEN fails")
     public void shouldNotDeleteEmployee() throws FamilyCompensationFundException {
 
-        assertFalse(colsubsidioFund.deleteEmployee(employeeSalary.getId()));
-
         Exception e = assertThrows(FamilyCompensationFundException.class, () -> colsubsidioFund.deleteEmployee(employeeSalary.getId()));
         assertEquals(FamilyCompensationFundException.EMPLOYEE_IS_NOT_REGISTERED, e.getMessage());
+
     }
 
     @Test
@@ -105,6 +105,7 @@ public class ColsubsidioFundTest {
 
         assertTrue(colsubsidioFund.registerEmployee(employeeSalary));
         assertTrue(colsubsidioFund.isEmployeeRegistered(employeeSalary.getId()));
+
     }
 
 
@@ -112,7 +113,9 @@ public class ColsubsidioFundTest {
     @DisplayName("GIVEN a employee by salary not registered WHEN try to validate is registered THEN fails")
     public void shouldNotValidateEmployeeIsRegistered() throws FamilyCompensationFundException {
 
-        assertFalse(colsubsidioFund.isEmployeeRegistered(employeeSalary.getId()));
+        Exception e = assertThrows(FamilyCompensationFundException.class, () -> colsubsidioFund.isEmployeeRegistered(employeeSalary.getId()));
+        assertEquals(FamilyCompensationFundException.EMPLOYEE_IS_NOT_REGISTERED, e.getMessage());
+
     }
 
     @Test
@@ -120,6 +123,7 @@ public class ColsubsidioFundTest {
 
         String benefits = colsubsidioFund.printBenefits();
         assertNotNull(benefits);
+
     }
 
 }
