@@ -13,7 +13,7 @@ public interface IFamilyCompensationFund {
      * @param employee
      * @return false - si no pudo registrar al empleado, de otro modo, true.
      */
-    boolean registerEmployee(Employee employee);
+    boolean registerEmployee(Employee employee) throws FamilyCompensationFundException;
 
     /**
      * Elimina a un empleado de la caja de compensación
@@ -21,7 +21,7 @@ public interface IFamilyCompensationFund {
      * @param id
      * @return false- si no pudo eliminar al empleado, de otro modo, true.
      */
-    boolean deleteEmployee(UUID id);
+    boolean deleteEmployee(UUID id) throws FamilyCompensationFundException;
 
     /**
      * Indica si el empleado esta o no registrado en la caja de compensación.
@@ -29,7 +29,7 @@ public interface IFamilyCompensationFund {
      * @param id
      * @return true - si el empleado existe, false de otro modo.
      */
-    boolean isEmployeeRegistered(UUID id);
+    boolean isEmployeeRegistered(UUID id) throws FamilyCompensationFundException;
 
     /**
      * Imprime los beneficios de la caja de compensación.

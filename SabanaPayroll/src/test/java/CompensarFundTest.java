@@ -55,24 +55,30 @@ public class CompensarFundTest {
 
     @Test
     @DisplayName("GIVEN a employee by salary WHEN try to register THEN success")
-    public void shouldRegisterEmployee() {
+    public void shouldRegisterEmployee() throws FamilyCompensationFundException {
 
         assertTrue(compensarFund.registerEmployee(employeeSalary));
     }
 
     @Test
     @DisplayName("GIVEN a employee by hours WHEN try to register THEN fails")
-    public void shouldNotRegisterEmployeeWhenByCommission() {
+    public void shouldNotRegisterEmployeeWhenByHours() throws FamilyCompensationFundException{
 
         assertFalse(compensarFund.registerEmployee(employeeHours));
+
+        Exception e = assertThrows(FamilyCompensationFundException.class, () -> CompensarFund.registerEmployee(employeeHours));
+        assertEquals(FamilyCompensationFundException.EMPLOYEE_NOT_ALLOWED, e.getMessage());
     }
 
     @Test
     @DisplayName("GIVEN a employee by salary registered WHEN try to register again THEN fails")
-    public void shouldNotRegisterEmployeeWhenDuplicated() {
+    public void shouldNotRegisterEmployeeWhenDuplicated() throws FamilyCompensationFundException {
 
         assertTrue(compensarFund.registerEmployee(employeeSalary));
         assertFalse(compensarFund.registerEmployee(employeeSalary));
+
+        Exception e = assertThrows(FamilyCompensationFundException.class, () -> compensarFund.registerEmployee(employeeSalary));
+        assertEquals(FamilyCompensationFundException.EMPLOYEE_REGISTERED, e.getMessage());
     }
 
 
@@ -87,9 +93,12 @@ public class CompensarFundTest {
 
     @Test
     @DisplayName("GIVEN a employee by salary not registered WHEN try to delete THEN fails")
-    public void shouldNotDeleteEmployee() {
+    public void shouldNotDeleteEmployee() throws FamilyCompensationFundException {
 
         assertFalse(compensarFund.deleteEmployee(employeeSalary.getId()));
+
+        Exception e = assertThrows(FamilyCompensationFundException.class, () -> compensarFund.deleteEmployee(employeeSalary.getId()));
+        assertEquals(FamilyCompensationFundException.EMPLOYEE_IS_NOT_REGISTERED, e.getMessage());
     }
 
     @Test

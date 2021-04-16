@@ -16,16 +16,15 @@ public class CompensarFund implements IFamilyCompensationFund{
 
 
     @Override
-    public boolean registerEmployee(Employee employee) {
-        boolean result = false;
+    public boolean registerEmployee(Employee employee) throws FamilyCompensationFundException {
 
-        if (!(registeredEmployees.contains(employee.getId()))){
-            if(!(employee instanceof EmployeeHours)){
-                registeredEmployees.add(employee.getId());
-                result = true;
-            }
-        }
-        return result;
+        if ((registeredEmployees.contains(employee.getId())))
+            throw new FamilyCompensationFundException (FamilyCompensationFundException.EMPLOYEE_REGISTERED);
+        if (employee instanceof EmployeeHours)
+            throw new FamilyCompensationFundException(FamilyCompensationFundException.EMPLOYEE_NOT_ALLOWED);
+
+        return registeredEmployees.add(employee.getId());
+
     }
 
     @Override
