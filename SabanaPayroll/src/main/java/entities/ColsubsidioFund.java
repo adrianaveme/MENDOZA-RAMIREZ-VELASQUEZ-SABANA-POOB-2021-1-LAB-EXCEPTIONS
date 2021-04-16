@@ -7,7 +7,7 @@ import java.util.UUID;
 
 public class ColsubsidioFund implements IFamilyCompensationFund {
 
-    private static Map<UUID, Employee> registeredEmployees = new HashMap<>();
+    private static final Map<UUID, Employee> registeredEmployees = new HashMap<>();
 
     public ColsubsidioFund() {
 
@@ -17,21 +17,20 @@ public class ColsubsidioFund implements IFamilyCompensationFund {
      * No permite registrar empleados de tipo EmployeeByCommission.
      *
      * @param employee
-     * @return
+     * @return result
      */
     @Override
     public boolean registerEmployee(Employee employee) {
 
     boolean result = false;
 
-    if (!(isEmployeeRegistered(employee.getId()))) {
-        if (!(employee instanceof EmployeeCommission)) {
+        if (!(registeredEmployees.containsKey(employee.getId()))) {
+            if (!(employee instanceof EmployeeCommission)) {
             registeredEmployees.put(employee.getId(), employee);
             result = true;
+            }
         }
-    }
-
-    return result;
+        return result;
     }
 
     @Override

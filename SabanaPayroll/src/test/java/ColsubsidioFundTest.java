@@ -12,7 +12,7 @@ public class ColsubsidioFundTest {
 
     private static Faker faker;
 
-    private static List<Employee> employees;
+    private static ArrayList<Employee> employees;
     private static Department department;
 
     private static EmployeeSalary employeeSalary;
@@ -25,16 +25,18 @@ public class ColsubsidioFundTest {
     public void setUp() {
         faker = new Faker(new Locale("en-US"));
 
-        department = new Department("Engineering");
+        employees = new ArrayList<>();
+
+        department = new Department("Engineering", employees);
 
         employeeSalary = new EmployeeSalary(faker.name().firstName(), faker.name().lastName(), department, 1000000);
         employeeHours = new EmployeeHours(faker.name().firstName(), faker.name().lastName(), department, 40);
         employeeCommission = new EmployeeCommission(faker.name().firstName(), faker.name().lastName(), department, 100);
 
-        employees = new ArrayList<>();
         employees.add(employeeSalary);
         employees.add(employeeHours);
         employees.add(employeeCommission);
+
 
         colsubsidioFund = new ColsubsidioFund();
     }
@@ -65,7 +67,7 @@ public class ColsubsidioFundTest {
         assertFalse(colsubsidioFund.registerEmployee(employeeCommission));
     }
 
-    /*@Test
+    @Test
     @DisplayName("GIVEN an employee by salary registered WHEN try to register again THEN fails")
     public void shouldNotRegisterEmployeeWhenDuplicated() {
 
@@ -73,7 +75,7 @@ public class ColsubsidioFundTest {
         assertFalse(colsubsidioFund.registerEmployee(employeeSalary));
     }
 
-     */
+
 
 
 
@@ -94,7 +96,7 @@ public class ColsubsidioFundTest {
         assertFalse(colsubsidioFund.deleteEmployee(employeeSalary.getId()));
     }
 
-    /*@Test
+    @Test
     @DisplayName("GIVEN a employee by salary registered WHEN try to validate is registered THEN success")
     public void shouldValidateEmployeeIsRegistered() {
 
@@ -102,7 +104,6 @@ public class ColsubsidioFundTest {
         assertTrue(colsubsidioFund.isEmployeeRegistered(employeeSalary.getId()));
     }
 
-     */
 
     @Test
     @DisplayName("GIVEN a employee by salary not registered WHEN try to validate is registered THEN fails")
