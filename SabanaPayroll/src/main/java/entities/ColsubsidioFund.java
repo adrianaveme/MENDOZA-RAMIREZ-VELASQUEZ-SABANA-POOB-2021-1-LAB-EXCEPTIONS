@@ -20,34 +20,34 @@ public class ColsubsidioFund implements IFamilyCompensationFund {
      * @return result
      */
     @Override
-    public boolean registerEmployee(Employee employee) {
+    public boolean registerEmployee(Employee employee) throws FamilyCompensationFundException {
 
-    boolean result = false;
+        if (registeredEmployees.containsKey(employee.getId()))
+            throw new FamilyCompensationFundException(FamilyCompensationFundException.EMPLOYEE_REGISTERED);
+        if (employee instanceof EmployeeCommission)
+            throw new FamilyCompensationFundException(FamilyCompensationFundException.EMPLOYEE_NOT_ALLOWED);
 
-        if (!(registeredEmployees.containsKey(employee.getId()))) {
-            if (!(employee instanceof EmployeeCommission)) {
-            registeredEmployees.put(employee.getId(), employee);
-            result = true;
-            }
-        }
-        return result;
+        registeredEmployees.put(employee.getId(), employee);
+        return registeredEmployees.containsKey(employee.getId());
     }
 
     @Override
-    public boolean deleteEmployee(UUID id) {
+    public boolean deleteEmployee(UUID id) throws FamilyCompensationFundException {
 
-        boolean result = false;
+        if (!(isEmployeeRegistered(id)))
+            throw new FamilyCompensationFundException(FamilyCompensationFundException.EMPLOYEE_IS_NOT_REGISTERED);
 
-        if (isEmployeeRegistered(id)){
-            registeredEmployees.remove(id);
-            result = true;
-        }
+        registeredEmployees.remove(id);
 
-        return result;
+        return (!(registeredEmployees.containsKey(id)));
     }
 
     @Override
-    public boolean isEmployeeRegistered(UUID id) {
+    public boolean isEmployeeRegistered(UUID id) throws FamilyCompensationFundException {
+
+        if (!(registeredEmployees.containsKey(id)))
+            throw new FamilyCompensationFundException(FamilyCompensationFundException.EMPLOYEE_IS_NOT_REGISTERED);
+
         return registeredEmployees.containsKey(id);
     }
 
