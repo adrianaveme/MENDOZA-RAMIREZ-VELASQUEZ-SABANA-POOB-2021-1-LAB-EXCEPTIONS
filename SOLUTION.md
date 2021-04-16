@@ -242,7 +242,7 @@ Diagrama de secuencia AssignFamilyCompensation
 
 ## Parte 6 - `Interfaces diseñando en un contexto `
 
-![image](https://github.com/adrianaveme/MENDOZA-RAMIREZ-VELASQUEZ-SABANA-POOB-2021-1-LAB-INTERFACES/commit/9292c978fa40647c4dad5f4bd21a93610b0340e0#diff-ff87200b5e45946b80502eb5bb001ca5d85be82830fc7947837edfa6404a81bd)
+![image](https://github.com/adrianaveme/MENDOZA-RAMIREZ-VELASQUEZ-SABANA-POOB-2021-1-LAB-INTERFACES/blob/master/Screenshots/Dise%C3%B1o%20EPS.png)
 
 
 
