@@ -65,7 +65,6 @@ public class SabanaPayroll {
         if (employee==null)
             throw new SabanaPayrollExceptions(SabanaPayrollExceptions.NONEXISTENT_EMPLOYEE);
 
-
         return employee.getAccount().getBalance();
     }
 

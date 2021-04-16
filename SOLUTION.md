@@ -288,11 +288,24 @@ Pruebas SabanaPayroll con AssignFamilyCompensation
 ## Parte 4 `Excepciones integrando`
 
 ### ¿Por qué el compilador muestra estos errores?
-
+Porque pueden salir excepciones en los métodos y no se esta considerando en SabanaPayroll. Esto debido a que tiene métodos relacionados con FamilyCompensationFund de los cuales pueden salir excepciones unchecked en SabanaPayroll.
 
 ### ¿Qué debemos hacer para controlarlos?
+Para controlarlos se coloca throws exception para que el compilador tenga en cuenta que pueden salir excepciones. De esta manera las excepciones pasan a ser checked.
 
 ### ¿Deben ser las excepciones en `SabanaPayroll` controladas o propagadas?
+Las excepciones deben ser porpagadas porque la responsabilidad de manejar las excepciones se delega a otra parte del codigo de tal forma que SabanaPayroll solo será consciente de que dicha excepción existe.
 
-### Parte 5 
-Excepción personalizada
+### Parte 5 Excepción personalizada
+
+Creamos una excepción en SabanaPayroll por si se busca un empleado que no existe o si se intenta hacer algo con el. También se actualizaron las pruebas.
+
+Ejemplo para CalculateEmployeeBalance()
+
+```java
+		
+        if (employee==null)
+            throw new SabanaPayrollExceptions(SabanaPayrollExceptions.NONEXISTENT_EMPLOYEE);
+        
+        return employee.getAccount().getBalance();
+		
