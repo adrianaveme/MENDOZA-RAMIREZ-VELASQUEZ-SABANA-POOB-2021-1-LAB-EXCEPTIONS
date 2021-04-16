@@ -131,21 +131,21 @@ public class SabanaNominaTest {
     }
 
     @Test
-    public void assignColsubsidioFamilyCompensation() {
+    public void assignColsubsidioFamilyCompensation() throws FamilyCompensationFundException {
 
         boolean result = sp.assignFamilyCompensation(colsubsidioFund, es1.getId());
         assertTrue(result);
     }
 
     @Test
-    public void assignCompensarFamilyCompensation() {
+    public void assignCompensarFamilyCompensation() throws FamilyCompensationFundException {
 
         boolean result = sp.assignFamilyCompensation(compensarFund, ec1.getId());
         assertTrue(result);
     }
 
     @Test
-    public void assignCafamFamilyCompensation() {
+    public void assignCafamFamilyCompensation() throws FamilyCompensationFundException {
 
         boolean result = sp.assignFamilyCompensation(cafamFund, eh1.getId());
         assertTrue(result);

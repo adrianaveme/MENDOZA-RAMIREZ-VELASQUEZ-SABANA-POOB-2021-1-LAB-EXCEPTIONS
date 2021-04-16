@@ -76,6 +76,7 @@ public class CafamFundTest {
 
         assertTrue(cafamFund.registerEmployee(employeeSalary));
         assertTrue(cafamFund.deleteEmployee(employeeSalary.getId()));
+
     }
 
     @Test
@@ -83,6 +84,9 @@ public class CafamFundTest {
     public void shouldNotDeleteEmployee() throws FamilyCompensationFundException{
 
         assertFalse(cafamFund.deleteEmployee(employeeSalary.getId()));
+
+        Exception e = assertThrows(FamilyCompensationFundException.class, () -> cafamFund.deleteEmployee(employeeSalary.getId()));
+        assertEquals(FamilyCompensationFundException.EMPLOYEE_REGISTERED, e.getMessage());
     }
 
     @Test
@@ -98,6 +102,9 @@ public class CafamFundTest {
     public void shouldNotValidateEmployeeIsRegistered() throws FamilyCompensationFundException{
 
         assertFalse(cafamFund.isEmployeeRegistered(employeeSalary.getId()));
+
+        Exception e = assertThrows(FamilyCompensationFundException.class, () -> cafamFund.isEmployeeRegistered(employeeSalary.getId()));
+        assertEquals(FamilyCompensationFundException.EMPLOYEE_IS_NOT_REGISTERED, e.getMessage());
     }
 
     @Test
