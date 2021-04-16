@@ -268,11 +268,20 @@ Pruebas SabanaPayroll con AssignFamilyCompensation
 ![image](https://github.com/adrianaveme/MENDOZA-RAMIREZ-VELASQUEZ-SABANA-POOB-2021-1-LAB-INTERFACES/blob/master/Screenshots/Dise%C3%B1o%20EPS.png)
 
 
+# LAB EXCEPCIONES
 
+## Parte 1 - `Entendiendo las Excepciones`
 
+### ¿Cómo se lanza una excepción en JAVA?
+* A través de la palabra reservada Throws, esta palabra va después de la declaración normal de cualquier otro método. Luego de esta palabra, se declara que excepción/es va a lanzar. Si el método puede lanzar más de una excepción, se ponen los nombres de todas separados por comas. (Para crear nuevas excepciones, debemos crear las clases de estas que hereden de Exception y declarar sus constructores)
 
+### ¿Cómo se propaga una excepción en JAVA?
+* Cuando se produce una excepción, la máquina virtual empieza a buscar codigo para tratar la excepcion, si esta no encuentra el código en el método actual, esta se propaga hacia el método que lo haya invocado y se busca allí el código que la trate. Si este tampoco lo tiene, se propagará a su vez al que lo haya invocado, y así sucesivamente hasta encontrar un método con try y catch que trate la excepción.
 
+### ¿Cómo se captura una excepción en JAVA? 
+* Con las palabras reservadas, try y catch se puede capturar la excepción. Try es el encargado de probar que el bloque de código tenga o no excepciones. En caso de que se produzca la excepción, Catch (que recibe como argumento throwable) se encarga de manejarlo, normalmente mostrando un mensaje de que ha causado el error. Un try puede tener más de un catch.
 
-
+### ¿Cuál es la diferencia en la implementación de las pruebas? ¿Validan lo mismo?
+* Inicialmente si validan lo mismo, pero ahora todas utilizan excepciones. Esto quiere decir que ademas de validar lo que antes validaban, tambien se aseguran de que no hayan excepciones de ningun tipo, y si las hay, capturarlas o propagarlas.
 
 
