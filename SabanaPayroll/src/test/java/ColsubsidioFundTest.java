@@ -65,6 +65,9 @@ public class ColsubsidioFundTest {
     public void shouldNotRegisterEmployeeWhenByCommission() {
 
         assertFalse(colsubsidioFund.registerEmployee(employeeCommission));
+
+        Exception e = assertThrows(FamilyCompensationFundException.class, () -> colsubsidioFund.registerEmployee(employeeCommission));
+        assertEquals(FamilyCompensationFundException.EMPLOYEE_NOT_ALLOWED, e.getMessage());
     }
 
     @Test
@@ -73,6 +76,9 @@ public class ColsubsidioFundTest {
 
         assertTrue(colsubsidioFund.registerEmployee(employeeSalary));
         assertFalse(colsubsidioFund.registerEmployee(employeeSalary));
+
+        Exception e = assertThrows(FamilyCompensationFundException.class, () -> colsubsidioFund.registerEmployee(employeeSalary));
+        assertEquals(FamilyCompensationFundException.EMPLOYEE_REGISTERED, e.getMessage());
     }
 
     @Test
@@ -88,6 +94,9 @@ public class ColsubsidioFundTest {
     public void shouldNotDeleteEmployee() {
 
         assertFalse(colsubsidioFund.deleteEmployee(employeeSalary.getId()));
+
+        Exception e = assertThrows(FamilyCompensationFundException.class, () -> colsubsidioFund.deleteEmployee(employeeSalary.getId()));
+        assertEquals(FamilyCompensationFundException.EMPLOYEE_IS_NOT_REGISTERED, e.getMessage());
     }
 
     @Test
