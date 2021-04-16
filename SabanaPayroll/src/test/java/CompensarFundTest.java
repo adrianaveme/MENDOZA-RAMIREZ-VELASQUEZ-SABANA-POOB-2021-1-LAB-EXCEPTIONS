@@ -66,7 +66,7 @@ public class CompensarFundTest {
 
         assertFalse(compensarFund.registerEmployee(employeeHours));
 
-        Exception e = assertThrows(FamilyCompensationFundException.class, () -> CompensarFund.registerEmployee(employeeHours));
+        Exception e = assertThrows(FamilyCompensationFundException.class, () -> compensarFund.registerEmployee(employeeHours));
         assertEquals(FamilyCompensationFundException.EMPLOYEE_NOT_ALLOWED, e.getMessage());
     }
 

@@ -90,7 +90,7 @@ public class SabanaPayroll {
         return cont;
     }
 
-    public boolean assignFamilyCompensation(IFamilyCompensationFund fund, UUID id){
+    public boolean assignFamilyCompensation(IFamilyCompensationFund fund, UUID id) throws FamilyCompensationFundException{
         boolean result = false;
 
         Employee e = findEmployee(id);
